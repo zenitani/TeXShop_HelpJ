@@ -88,7 +88,7 @@ http://www-gauge.scphys.kyoto-u.ac.jp/~sonobe/OgreKit
 
 【★】ファイル・アイコンをソース・テキストにドラッグ＆ドロップすることができます。それが tex ファイルの場合には、ファイルへの相対パスで \input コマンドが付け加えられます。グラフィック・ファイルであれば、代わりに \includegraphics コマンドが付加されます。次のグラフィック・タイプが認識されます： pdf ・ jpg ・ jpeg ・ tif ・ tiff ・ eps ・ ps
 
-	* 補足：LaTeX Equation Editorで作った数式pdfファイルの場合は、ファイルの中に埋め込まれている元のTeXコードを取り出してくれます。
+* 補足：LaTeX Equation Editorで作った数式pdfファイルの場合は、ファイルの中に埋め込まれている元のTeXコードを取り出してくれます。
 
 ［☆］Dropping a cls file produces \documentclass and a file reference, dropping a sty file produces \usepackage, dropping a bib file produces \bibliographystyle, and dropping other text files produces \input.
 
@@ -260,7 +260,7 @@ http://www-gauge.scphys.kyoto-u.ac.jp/~sonobe/OgreKit
 
 【★】下にあるのは Nathan Potter が送ってくれた environment.plist ファイルのサンプルです ； ありがとう！ さらなる詳細については、 http://developer.apple.com/qa/qa2001/qa1067.html でお調べください
 
-	* -サンプルコードは画像で紹介されています。TeXShop のヘルプメニューからご覧ください。
+* サンプルコードは画像で紹介されています。TeXShop のヘルプメニューからご覧ください。
 
 ##Additional Typesetting Engines（追加のタイプセット・エンジン）
 
@@ -275,7 +275,7 @@ http://scripts.sil.org/xetex
 
 【★】これがどのように動作するのかを理解できるような、簡単な XeLaTeX のソース文書と出力結果があります。アラビア語とヘブライ語の文字は「システム環境設定」の「言語環境」で「入力メニュー」タブを選び、 Arabic と Hebrew にチェックを入れます ； 小さな国旗がメニューバーに表示されるので、それを選択することでキーボード入力を切り替えられます。
 
-	* -（入力例と出力例の画像）
+*（入力例と出力例の画像）
 
 ［☆］TeXShop now supports XeTeX and XeLaTeX:
 
@@ -559,17 +559,17 @@ http://scripts.sil.org/xetex
 
 【★】シンクロナイゼーションは、 mysource.pdfsync にデータを書き込み、プレビュー・ウィンドウ内の特定のシンクロ・スポットに照応させることで機能しています。大まかに言えば、それぞれのデータ・エントリには以下のようなものが含まれます──
 
-	* ［☆］the page number of the preview document where the point occurs
-	* 【★】ポイントの置かれたプレビュー文書のページ番号
+* ［☆］the page number of the preview document where the point occurs
+* 【★】ポイントの置かれたプレビュー文書のページ番号
 
-	* ［☆］the location of the point on this page
-	* 【★】このページにおけるポイントの位置
+* ［☆］the location of the point on this page
+* 【★】このページにおけるポイントの位置
 
-	* ［☆］the name of the source file producing this particular output
-	* 【★】この特定の出力を生成するソースファイルの名前
+* ［☆］the name of the source file producing this particular output
+* 【★】この特定の出力を生成するソースファイルの名前
 
-	* ［☆］the line number in this source file for this particular output
-	* 【★】このソースファイル内の該当する行番号
+* ［☆］the line number in this source file for this particular output
+* 【★】このソースファイル内の該当する行番号
 
 ［☆］There is a way to get TeXShop to display these synchronization points. The preview window toolbar has a checkbox item called SyncMarks. By default, this item is not shown; use Customize Toolbar in the Window menu to select it. When the checkbox is checked, synchronization points are shown.
 
