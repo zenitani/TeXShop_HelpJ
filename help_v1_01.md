@@ -1,9 +1,9 @@
-[[TeXShop]] の日本語ヘルプファイルのアーカイブ (v1-1) です。
+TeXShop の日本語ヘルプファイルのアーカイブ (v1-1) です。
 
 作業当時の日英対訳テキストをアップしています。
 
 ----
-'''Version 1.35e'''
+Version 1.35e
 ----
 
 #Basic Help（基本的なヘルプ）（その１）
@@ -31,8 +31,8 @@
 上記のウェブサイトでもソースファイルを配布していますが、 pTeX 以外にも dvipdfmx や Ghostscript といった関連プログラムをインストールする必要があります。幸いなことに Mac OS X 用にコンパイル済みのバイナリ・パッケージがいくつか配布されており、これらを使うことで、容易にインストールできるようになっています。主要なパッケージについて以下に示します。
 
 * pTeX package パッケージ（桐木版）
-	*http://www.r.dendai.ac.jp/kiriki/tex/
-	*日本国内の定番 pTeX パッケージです。利用しているユーザーも多く、アップデートは年度ごとに１回となっています。 Ghostscript まで含まれたオールインワンの ptex package をダウンロードしてインストールしてください。東京電機大学の桐木紳（ Shin Kiriki ）さんにより配布されています。
+	* http://www.r.dendai.ac.jp/kiriki/tex/
+	* 日本国内の定番 pTeX パッケージです。利用しているユーザーも多く、アップデートは年度ごとに１回となっています。 Ghostscript まで含まれたオールインワンの ptex package をダウンロードしてインストールしてください。東京電機大学の桐木紳（ Shin Kiriki ）さんにより配布されています。
 
 * pTeX(sjis) + JMacros package for Mac OS X（小川版）
 	* http://www2.kumagaku.ac.jp/teacher/herogw/
@@ -54,7 +54,7 @@
 
 桐木版、小川版、井上版をインストールした場合、 TeXShop バージョン 1.34 では、環境設定の「設定プロファイル」でそれぞれの版を選択して初期設定を行なっていましたが、バージョン 1.35 ではこれが変更されました。【重要】以前のバージョンからのユーザはかならず「アップグレード時の注意」にしたがって、適切な変更を行なってください。各プロファイルの詳細に関してはヘルプ項目「環境設定」を参照してください。さらに日本語エンコーディングについて知るには、ヘルプ項目「日本語エンコーディングと \ ¥ 文字の扱い」を参照します。
 
-pTeX + TeXShop で日本語TeX文書を作成する際の注意点について述べておかねばなりません。 TeXShop には「pdfTeX」 「TeX + Ghostscript」 「パーソナルスクリプト」の３種類のモードがあり、それぞれにタイプセットの方式が異なっています。日本語環境では「''TeX＋Ghostscript''」を使うとよいでしょう。 TeX ファイルは pTeX によって dvi ファイルに変換され、さらに dvipdfmx によって pdf ファイルに変換されます。 「TeX＋Ghostscript」モードで利用できる画像形式は、基本的には eps と ps ですが、 dvipdfmx 自体は pdf ・ jpg ・ png ・ mps を扱うことも可能です（ jpg ・ png ・ pdf 画像の扱いについては、ヘルプ項目「画像を入れる」を参照してください）。
+pTeX + TeXShop で日本語TeX文書を作成する際の注意点について述べておかねばなりません。 TeXShop には「pdfTeX」 「TeX + Ghostscript」 「パーソナルスクリプト」の３種類のモードがあり、それぞれにタイプセットの方式が異なっています。日本語環境では「**TeX＋Ghostscript**」を使うとよいでしょう。 TeX ファイルは pTeX によって dvi ファイルに変換され、さらに dvipdfmx によって pdf ファイルに変換されます。 「TeX＋Ghostscript」モードで利用できる画像形式は、基本的には eps と ps ですが、 dvipdfmx 自体は pdf ・ jpg ・ png ・ mps を扱うことも可能です（ jpg ・ png ・ pdf 画像の扱いについては、ヘルプ項目「画像を入れる」を参照してください）。
 
 「TeX + Ghostscript」が＋記号で結ばれていることに触れておくべきかもしれません──これはシェルスクリプトにより platex -> dvipdfmx という動作が実行されているにすぎないことを意味しています。つまり、たとえば目次の作成などのように複数回のタイプセットが必要な場合には、いくぶん無駄が生じる、ということです。こうした無駄を省きたいユーザは、 platex -> platex -> dvipdfmx というように動作するマクロ・スクリプトを利用することができます。マクロについて詳しく知りたい場合は「マクロ・ヘルプ」をお調べください。
 
@@ -65,7 +65,8 @@ pTeX + TeXShop で日本語TeX文書を作成する際の注意点について�
 以下にそれぞれの違いをまとめておきます。
 
 | タイプセットモード | pdfTeX | TeX + Ghostscript |
-| タイプセット | 高速 | やや遅い |
+|--------------------|--------|-------------------|
+| タイプセット       | 高速   | やや遅い          |
 | 日本語 | 不可 | 可 |
 | 画像形式 | pdf、jpg、png、mps (※) | eps、ps |
 
@@ -201,7 +202,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 ［☆］There is a way to permanently set the typesetting method of a document regardless of preference choices. If the first line of a document is %&tex or %&program=tex, with no initial spaces on the line, then tex + ghostscript will be used. If the first line is %&latex or %&program=latex, then latex + ghostscript will be used. If the first line is %&pdftex or %&program=pdftex, or %&pdflatex or %&program=pdflatex, then pdftex or pdflatex will be used. If the first line is %&personaltex or %&program=personaltex, or %&personallatex or %&program=personallatex, then the personal script will be used as set in the preference dialog.
 
-【★】環境設定における選択の如何によらず、ある文書のタイプセット方式を常に固定する方法があります。文書の第１行目が %&tex ないしは ''%&program=tex'' となっていれば──行頭にスペースは入れません── TeX＋Ghostscript が使われます。第１行目が %&latex ないしは ''%&program=latex'' になっていれば LaTeX＋Ghostscript となります。第１行目が %&pdftex か ''%&program=pdftex'' もしくは %&pdflatex か ''%&program=pdflatex'' となっていれば、 pdftex もしくは pdflatex が使われます。そしてもし最初の１行が %&personaltex ないしは ''%&program=personaltex'' または %&personallatex ないしは ''%&program=personallatex'' となっていた場合には、環境設定ダイアログでの設定にしたがってパーソナルスクリプトが用いられます。
+【★】環境設定における選択の如何によらず、ある文書のタイプセット方式を常に固定する方法があります。文書の第１行目が %&tex ないしは **%&program=tex** となっていれば──行頭にスペースは入れません── TeX＋Ghostscript が使われます。第１行目が %&latex ないしは **%&program=latex** になっていれば LaTeX＋Ghostscript となります。第１行目が %&pdftex か **%&program=pdftex** もしくは %&pdflatex か **%&program=pdflatex** となっていれば、 pdftex もしくは pdflatex が使われます。そしてもし最初の１行が %&personaltex ないしは **%&program=personaltex** または %&personallatex ないしは **%&program=personallatex** となっていた場合には、環境設定ダイアログでの設定にしたがってパーソナルスクリプトが用いられます。
 
 ##Checking Spelling（スペルをチェックする）
 
@@ -276,8 +277,8 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】よく使う TeX コマンドをソース・ドキュメントに挿入する仕組みが他にもあります。マクロ・メニューまたはツールバーのマクロ・ボタンから見つけてコマンドを選び取ってください。なお、 AppleScript コマンドを実行するマクロもあります。マクロエディタを備え付けてありますから、現行のマクロを調べたり、修正したり、独自のマクロを追加することが可能です。詳細については、ヘルプメニューにある「マクロ・ヘルプ」を参照してください。 TeXShop のマクロ・コマンドとマクロエディタは宍倉光広さんによって作成されました。デフォルト・マクロは宍倉光広さんと小川弘和さんによって作成されたものです。
 
-	* 補足：「 About Macros 」は後出の「 Macros Help 」のことだと思われます。
-	* これはヘルプがHTML化される前の名残りですね。次の機会に報告しておきます。
+ * 補足：「 About Macros 」は後出の「 Macros Help 」のことだと思われます。
+ * これはヘルプがHTML化される前の名残りですね。次の機会に報告しておきます。
 
 ［☆］Macros are stored in the file ~/Library/TeXShop/Macros/Macros.plist. This is an ordinary text file which can be copied and sent to others; thus you can distribute macros you have created. The Macro Editor has a command to read a plist file and add macros in it to existing macros.
 
@@ -479,6 +480,7 @@ TeX 記号の \ を入力するとき、手元に \ キーがなければ
 お使いの環境にあわせて調整して下さい。
 
 | エンコーディング                    |  メニュー項目名                 |  デフォルト  |
+|-------------------------------------|---------------------------------|--------------|
 |Japanese (ShiftJIS \ EUC JIS)        |  クリップボードで \ を ¥ に変換 |  ON  |
 |Japanese (ShiftJIS ¥ ShiftJIS X0213) |  クリップボードで ¥ を \ に変換 |  OFF |
 
@@ -487,4 +489,3 @@ TeX 記号の \ を入力するとき、手元に \ キーがなければ
 日本語エンコーディング（上記５つ）を設定している場合にのみ動作します。
 
 ----
-関連ページ　[[TeXShop]]
