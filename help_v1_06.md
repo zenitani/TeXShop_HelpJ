@@ -1,0 +1,610 @@
+TeXShop の日本語ヘルプファイルのアーカイブ (v1-6) です。
+
+作業当時の日英対訳テキストをアップしています。
+
+----
+Version 1.35e
+----
+
+#Credits（クレジット）
+
+［☆］**TeXShop is produced under the GPL public license. Coordination by:**
+
+【★】TeXShop は GPL 公有使用許諾のもとに提供されます。コーディネーター：
+
+* Richard Koch
+* Dirk Olmes
+* Gerben Wierda
+
+［☆］**Code by:**
+
+【★】コード開発：
+
+* Richard Koch
+* Dirk Olmes
+* Gerben Wierda
+* Mitsuhiro Shishikura （宍倉光広）
+* Seiji Zenitani （銭谷誠司）
+* Isao Sonobe （園部勳）
+* Martin Kerz
+* Anton Leuski
+* Jérôme Laurens
+* Piero D'Ancona
+* Geoffroy Lenglin
+* Jonas Zimmermann
+* Sean Luke
+* Max Horn
+* John Nairn
+* Greg Landweber
+* Nicolás Ojeda Bär
+* Martin Heusse
+* Sarah Childers
+* Makoto Inoue （井上真）
+* Sven A. Schmidt
+* Georg Klein
+* Maarten Sneep
+* Kevin Ballard
+* Elliott Hughes
+* Claus Gerhardt
+* Sebastian Siedentopf
+* Will Robertson
+* Stefan Walsen
+* Yu Itoh （伊東悠）
+* iNOUE Koich! （井上浩一）
+
+［☆］**Localization by:**
+
+【★】ローカライズ：
+
+* Maarten Sneep
+* Jérôme Laurens
+* Hendrik Chaltin
+* Keith J. Schultz
+* Sascha Beverungen
+* Martin Kerz
+* Max Horn
+* Giuseppe Carlino
+* Nicola Vitacolonna
+* Seiji Zenitani （銭谷誠司）
+* Yoshihisa Okazaki （岡崎祥久）
+* Paulo Abreu
+* Andrei Teleman
+* Juan Luis Varona Malumbres
+
+［☆］**Contact Information:**
+
+【★】連絡先：
+
+* Richard Koch
+	* Mathematics Department University of Oregon Eugene, Oregon 97403
+	* koch@math.uoregon.edu
+* Dirk Olmes
+	* dirk@xanthippe.ping.de
+* Gerben Wierda （for teTeX only ── teTeX についてのみ）
+	* Gerben_Wierda@rna.nl
+
+#What's New?（更新履歴）
+
+##Version 1.35
+
+* ［☆］Version 1.35 adds extra features to TeXShop and fixes some bugs.
+* 【★】バージョン1.35では TeXShop にさらなる機能を追加し、いくつかのバグを修正しました。
+
+###──New features（新機能）
+
+* ［☆］An important recent development is the release of XeTeX and XeLaTeX by  Jonathan Kew. See
+* 【★】最近の重要な開発は、 Jonathan Kew による XeTeX と XeLaTeX のリリースです。以下を参照のこと。
+
+	* http://scripts.sil.org/xetex
+
+* ［☆］XeTeX is not part of Gerben Wierda's standard installation, but it is available  with Wierda's i-Installer as an optional install directly from Jonathan Kew.  XeTeX can access Macintosh fonts directly, so TeX documents can be written  with Lucida Grande, Zapfino, and any other Mac font. Moreover, XeTeX  understands Unicode, so for example users can type Arabic into the  source window from right to left, typeset with TeX, and obtain Arabic  in the output window. In particular, XeTeX source documents have  UTF-8 Unicode encoding.
+* 【★】XeTeX は Gerben Wierda による標準的なインストールには含まれていませんが、 Wierda の i-Installer を使い、オプション・インストールとして Jonathan Kew のところから入手できます。 XeTeX は Macintosh のフォントに直接アクセスできるので、 TeX 文書を Lucida Grande や Zapfino その他のフォントを使って書くことができます。さらに XeTeX は Unicode を理解するので、たとえばアラビア語を右から左へとソースウィンドウに打ち込んで TeX でタイプセットし、出力ウィンドウでアラビア語を得ることができます。具体的には、 XeTeX のソース文書は UTF-8 Unicode 形式になっています。
+
+* ［☆］TeXShop 1.35 supports XeTeX directly as follows:
+* 【★】TeXShop 1.35 では XeTeX を以下のように直接サポートします：
+
+* ［☆］a) XeTeX and XeLaTeX are now available in the pull-down typesetting menu  on the source window
+* 【★】XeTeX と XeLaTeX は、ソースウィンドウのプルダウンメニュー「タイプセット」から利用可能です
+
+* ［☆］b) Using preferences, a user can make XeTeX or XeLaTeX the default  typesetting option
+* 【★】環境設定を使って、 XeTeX と XeLaTeX をデフォルトのタイプセット・エンジンにすることができます
+
+* ［☆］c) If one of the first ten lines of the source has the form
+* 【★】ソースの冒頭10行以内に次のような書式がある場合──
+
+ %&encoding=UTF-8 Unicode
+
+* ［☆］then that file will be loaded and saved with UTF-8 Unicode encoding,  regardless of the default encoding chosen for other documents
+* 【★】他の文書用に選択したデフォルトのエンコーディング方式に関わらず、 UTF-8 Unicode でファイルが読み込まれ保存されます
+
+* ［☆］d) If the first line of the source has the form
+* 【★】もしソースの第１行目が次のいずれかの書式になっている場合──
+
+ %&program=xetex or %&program=xelatex
+
+* ［☆］then the appropriate program will be used regardless of the  typesetting option chosen.
+* 【★】タイプセット・オプションでの選択によらず、特定のプログラムが用いられます
+
+* ［☆］These XeTeX features form a special case of a new general method for adding  typesetting engines to TeXShop. There is a now a folder in ~/Library/TeXShop named  Engines; the files in this folder are shell scripts which call typesetting programs.  When TeXShop first starts, it examines this folder and adds the script names of  files it contains to the pull-down typesetting menu. Choosing one of these items and pushing the Typeset button calls the script. Users can write their own scripts and add  them to the Engines folder.
+* 【★】こうした XeTeX の特徴は、 TeXShop にタイプセット・エンジンを追加する新しい一般的な方法の特例となっています。 ~/Library/TeXShop 内に「Engines」という名前のフォルダがあります ； このフォルダに入っているファイルは、タイプセット・プログラムを呼び出せるシェル・スクリプトです。 TeXShop を最初に起動すると、このフォルダを調べ、ファイルのスクリプト名を加え、プルダウンメニュー「タイプセット」に含めます。この中から１つを選んでタイプセット・ボタンを押せば、スクリプトが呼び出されます。ユーザは自分で独自のスクリプトを書き、それを「Engines」フォルダに追加することができます。
+
+* ［☆］Items in ~/Library/TeXShop/Engines can be chosen as default typesetting method  in TeXShop Preferences.
+* 【★】~/Library/TeXShop/Engines 内の項目は、環境設定でデフォルトのタイプセット・エンジンに指定できます。
+
+* ［☆］In previous TeXShop versions, the typesetting program can be set in the first line  of the source code by writing %&tex, %&latex, %&pdftex, etc. For compatibility reasons,  this still works, but the preferred syntax is now %&program=tex, %&program=latex, %&program=pdftex, etc. This new syntax also works for any new typesetting engine  added to ~/Library/TeXShop/Engines. For example, %&program=xelatex chooses  XeLaTeX.
+* 【★】TeXShop の以前のバージョンでは、ソースコードの第１行目に %&tex ・ %&latex ・ %&pdftex などと書き込んでおくことで、タイプセット・プログラムを設定できます。互換性のため、この方法もまだ機能しますが、今では %&program=tex ・ %&program=latex ・ %&program=pdftex などのほうが好ましい構文です。
+
+* ［☆］The encoding used to open or save a file can be set by writing a line of the form
+* 【★】ファイルを開いたり保存したりするのに用いるエンコーディング方式は、次のような１行を、
+
+ %&encoding=UTF-8 Unicode
+
+* ［☆］as one of the first 10 lines of a source document. Any supported encoding is allowed;  TeXShop's Help Files list the string which must appear on the right for each of  these encodings. To bypass this behavior, hold down the option key while opening  a file.
+* 【★】ソース文書の冒頭10行以内に含めることで設定できます。サポートしているいずれのエンコーディング方式でもこれは可能です ； TeXShop のヘルプ・ファイルには、それぞれのエンコーディング方式の正確な文字列を載せてあります。この動作を回避するには、オプションキーを押しながらファイルを開きます。
+
+* ［☆］TeXShop has a new Find panel by Isao Sonobe. This panel supports regular expressions.  Users can switch between the new panel and the original one in Preferences.  The Find panel depends on OgreKit, a Cocoa framework for handling regular expressions by Sonobe. See
+* 【★】TeXShop には園部勲さんによる新しい検索パネルがあります。このパネルは正規表現をサポートしています。環境設定で新しいパネルと従来の Apple 標準のパネルとを切り替えることができます。新しい検索パネルは園部さんの OgreKit ──正規表現を扱うための Cocoa フレームワーク、に依存しています。以下を参照のこと──
+
+	* http://www-gauge.scphys.kyoto-u.ac.jp/~sonobe/OgreKit/
+
+* ［☆］OgreKit is distributed using a slightly modified version of the BSD license. This  license can be found in the Documentation included directly in the OgreKit Framework  folder in the TeXShop source distribution. OgreKit requires Panther, so the new panel  will only appear on machines running Panther.
+* 【★】OgreKit は BSD ライセンスをやや修正したライセンスに基づいて配布されています。同ライセンスは、 TeXShop ソースのディストリビューション内の OgreKit Framework フォルダの中にあるドキュメントで見られます。 OgreKit には Panther が必要になりますので、新しいパネルは Panther を稼働させているマシンでのみ表示されます。
+
+* ［☆］There are many nice features in this new Find panel, which users can discover for  themselves. OgreKit modifies the "Find" menu submenu of the TeXShop Edit menu,  replacing it with a more extensive menu. This might be confusing to Localizers,  because the menu in the TeXShop nib file is not the menu they will see when TeXShop  is running. The Find menu in the nib file should not be modified because it will  be active in system 10.2. Instead the corresponding menu in OgreKit needs to be  localized in the TeXShop source. The Find panel presents buttons controlling how  it will find words; the settings of the buttons will be remembered from session to  session. Adjust them until Find works as expected and then relax.
+* 【★】ユーザが自身で発見できることですが、新しい検索パネルには多くの素晴らしい機能があります。 OgreKit は TeXShop の「編集」メニューの「検索」サブメニューを変更し、より拡張されたメニューに置き換えます。これは各国語版へのローカライズ作業を混乱させるかもしれません──というのも、 TeXShop の nib ファイル内のメニューは、 TeXShop を実行しているときのものではないからです。 nib ファイルの「検索」メニューは変更すべきではありません──システム10.2で表示されてしまうからです。それをせずに OgreKit のメニューに対応するには、 TeXShop のソースでのローカライズが必要になります。検索パネルには、どのように検索を行なうかを制御するボタン類があります ； これらのボタンの設定は次回以降にも引き継がれます。思ったとおりに語句を見つけ出せるようになるまで調整したら、後はリラックスしてください。
+
+* ［☆］TeXShop 1.35 is distributed with the latest pdfsync.sty by Piero d'Ancona and J. Laurens.  This fixes typesetting problems caused by the version distributed with TeXShop 1.34.  TeXShop did not keep up with the changes by d'Ancona and Laurens for several months; sorry!
+* 【★】TeXShop 1.35 は、 Piero D'Ancona と J. Laurens による最新の pdfsync.sty とともに配布されています。最新版は TeXShop 1.34 で同梱したバージョンに起因するタイプセットの問題を解消しています。 TeXShop では、 Piero D'Ancona と J. Laurens による更新に、数カ月ほど追随していませんでした ； ごめんなさい！
+
+* ［☆］In the new version, \include and \input are supported; to use the second, the syntax  \input{thisfile} must be used rather than the syntax \input thisfile. The new version  supports \pdfsync, \pdfsyncstart, and \pdfsyncstop. Use the first of these commands  at any spot where you want to reference a point. If pdfsync breaks your code, enclose  the offending section in a \pdfsyncstop, \pdfsyncstart pair.
+* 【★】新バージョンでは、\include と \input をサポートしています ； 後者を用いるには「\input thisfile」ではなく「\input{thisfile}」という構文を使わねばなりません。新バージョンでは「\pdfsync」 「\pdfsyncstart」 「\pdfsyncstop」をサポートします。これらのコマンドのうち、最初のものは、ポイントを参照したい任意の場所で使ってください。もし pdfsync がコードを止めてしまうようなら、原因となるセクションを「\pdfsyncstop」と「\pdfsyncstart」のペアで括ってください。
+
+* ［☆］Suppose you are typesetting myfile.tex. Pdfsync creates a file named myfile.pdfsync  containing synchronization data. Roughly speaking, each data entry describes  a synchronization point as follows:
+* 【★】myfile.tex をタイプセットするとします。シンクロナイゼーション用のデータを格納するために pdfsync は、 myfile.pdfsync という名前のファアイルを生成します。大まかに言って、各データ・エントリにはシンクロナイゼーション・ポイントが以下のように記述されています：
+
+* ［☆］the page number of the output where the point occurs
+* 【★】ポイントの置かれたプレビュー文書のページ番号
+
+* ［☆］the location on this page
+* 【★】このページ上の位置
+
+* ［☆］the name of the source file producing this particular output
+* 【★】この特定の出力を生成するソースファイルの名前
+
+* ［☆］the line number in this source file for this particular output
+* 【★】このソースファイル内の該当する行番号
+
+* ［☆］There is a way to get TeXShop to display these synchronization points. The preview  window toolbar has a new checkbox item called SyncMarks. By default, this item is not  shown; use Customize Toolbar in the Window menu to select it. When the checkbox is  checked, synchornization points are shown.
+* 【★】こうしたシンクロナイゼーション・ポイントを TeXShop で表示させる方法があります。プレビュー・ウィンドウのツールバーには「Sync」という新しいチェックボックスがあります。デフォルトでは見えていません ； 「ウィンドウ」メニューにある「ツールバーをカスタマイズ...」を使って選び取ってください。チェックボックスをチェックすると、シンクロナイゼーション・ポイントが見えるようになります。
+
+* ［☆］By default, this item will not be checked when the Preview window first appears. A hidden  preference item can change this:
+* 【★】デフォルトでは、プレビュー・ウィンドウが最初に表示された際にこのチェックは入っていません。隠れた環境設定でこれを変更できます：
+
+ defaults write TeXShop ShowSyncMarks YES
+
+* ［☆］TeXShop 1.35 has new matrix code by Jonas Zimmermann. The Matrix Panel now makes tables. Examine the panel to find all of the new features. There is a hidden preference to set the default size of the matrix:
+* 【★】TeXShop 1.35 には Jonas Zimmermann による新しい行列コードが含まれています。行列パネルでテーブルが作成できるようになりました。パネルを試して新機能を見出してください。行列のデフォルトのサイズを設定する隠れた環境設定があります：
+
+ defaults write TeXShop matrixsize 12
+
+* ［☆］A very small number of users may have modified "matrixpanel.plist" in  ~/Library/TeXShop/MatrixPanel. This plist has been extended; the new list is  called "matrixpanel_1.plist". Please edit this file to add your changes.
+* 【★】ごく少数のユーザは ~/Library/TeXShop/MatrixPanel にある「matrixpanel.plist」を変更しているかもしれません。この plist は拡張されています ； 新しいリストは「matrixpanel_1.plist」です。独自の変更を加えるにはこちらのファイルを編集してください。
+
+* ［☆］In previous versions of TeXShop, if you clicked elsewhere and then clicked on the  edit window to edit, you would need to click twice to correctly position the cursor.  This is now changed; the first click in the edit text is recognized and positions the  cursor.
+* 【★】以前のバージョンの TeXShop では、どこか他の場所をクリックした後でテキスト編集をしようとして編集ウィンドウをクリックした場合、カーソルを正しい位置に入れるには、クリックを２度しなければなりませんでした。これが変更されました ； 編集テキスト上で１度だけクリックすれば、位置が認識されカーソルが入ります。
+
+* ［☆］When applescript runs under the Macro menu, it starts a small second application  embedded in the TeXShop folder to actually run the script. That is because when a  command like "latex" runs, and there is an error on the source, the console appears  to accept user input, but the TeXShop event loop is not running during the  applescript action, so no user input can occur.
+* 【★】マクロ・メニュー下で AppleScript を実行させると、 TeXShop フォルダに組み込まれている小さな補助アプリケーションが起動してスクリプトを実行します。なぜかというと「latex」のようなコマンドを実行して、もしソースにエラーがあった場合、コンソールが表示されユーザからの入力に応じようとしますが、 TeXShop のイベント・ループは AppleScript の動作中は実行されず、ユーザ入力ができないからです。
+
+* ［☆］Many applescripts do not have this problem. TeXShop now allows users to begin  applescript macros with the command
+* 【★】多くの AppleScript では、この問題はありません。 TeXShop では今回から AppleScript マクロを次のコマンドで書き始められるようになったということです──
+
+ -- applescript direct
+
+* ［☆］When written this way, the script will be run directly by TeXShop rather than by  the second small application.
+* 【★】この方法で書かれた場合、スクリプトは、小さな補助アプリケーションではなく、直接 TeXShop で実行されるのです。
+
+* ［☆］Added a menu command "Trash AUX Files" and a button on the console "Trash  AUX Files." When involked, these commands move to the trash all files in the  current source directory with the same name as the source file and extensions  aux, bbl, blg, brf, glo, idx, ilg, ind, ioa, lof, log, lot, mtc, mlf, out, pdfsync, and toc.  Thanks to Will Robertson for suggesting this command and producing this list of  extensions.
+* 【★】「作業ファイルを削除」というメニューコマンドが追加され、コンソールにも「作業ファイルを削除」というボタンが付きました。実行するとこれらのコマンドは、現在のソースがあるディレクトリ内にあり、ソースと名前が同じで、拡張子に aux ・ bbl ・ blg ・ brf ・ glo ・ idx ・ idv ・ ilg ・ ind ・ ioa ・ lof ・ log ・ lot ・ mtc ・ mlf ・ out ・ pdfsync ・ toc が付いたファイルをすべてゴミ箱に移動させます。このコマンドの提案と拡張子のリストの作成を Will Robertson に感謝します。
+
+* ［☆］Additional extensions can be added to this list with a hidden preference. To add  "dvi" to the list
+* 【★】隠れた環境設定で追加の拡張子をこのリストに加えることができます。 「dvi」を加えるには──
+
+ defaults write TeXShop OtherTrashExtensions -array-add "dvi"
+
+* ［☆］Several such extensions can be added in this way, one by one. To remove all  additions
+* 【★】こうした拡張子をひとつずつこの方法で追加できます。追加したものを取り除くには──
+
+ defaults write TeXShop OtherTrashExtensions -array
+
+* ［☆］The original list of extensions above will always remain active.
+* 【★】上記のオリジナルの拡張子リストは常に有効なままとなっています。
+
+* ［☆］Suppose a book project has a main.tex file in a folder, and then chapters in subfolders  which are accessed using commands like \include{chapter1/chapter1.tex}. When this  book is typeset, main.aux and other files will appear in the primary folder, and chapter1.aux will appear in a subfolder. So the "Trash AUX Files" command does  not do a complete cleanup. But if the option key is pressed when the menu item  is chosen or the button on the console window is pressed, then
+* 【★】書籍のプロジェクトを想定してください──あるフォルダの中に main.tex というファイルがあり、\include{chapter1/chapter1.tex} のようなコマンドを使ってアクセスしているサブフォルダ内に各章があるとします。この書籍をタイプセットすると、 main.aux やその他のファイルがメインフォルダ内に現われ、サブフォルダ内には chapter1.aux が現われます。そうなると「作業ファイルを削除」コマンドは、完全なクリーンナップを行なうことができません。けれども、このメニューアイテムを選択するとき、またはコンソール・ウィンドウのボタンを押すときに、オプションキーを押さえておくと、
+
+* ［☆］a) SourceDoc and Root File information will be used to find the  root document
+* 【★】SourceDoc とルートファイルの情報をもとにしてルート文書を探します
+
+* ［☆］b) All files with appropriate extensions listed above will be moved to the  trash from this folder and all subfolders, even if the name does not  agree with the name of the root file.
+* 【★】上記の該当する拡張子の付いたファイルはいずれも、ルートファイルの名前と一致せずとも、メインフォルダとすべてのサブフォルダの中からゴミ箱へと移されます
+
+* ［☆］Some users may want to throw caution to the winds and arrange that "Trash AUX Files"  always performs this more extensive cleanup. A hidden preference allows this:
+* 【★】「作業ファイルを削除」で常にこの広範囲なクリーンナップを行なえるようにしたがる、向こう見ずなユーザもいるかもしれません。隠れた環境設定でこれができます：
+
+ defaults write TeXShop AggressiveTrashAUX YES
+
+* ［☆］Added new templates by Will Robertson. These are heavily commented. It is  intended that users will edit them to fit their own requirements. The templates are  only installed if TeXShop is running for the first time, or if the Templates folder is  completely removed from ~/Library/TeXShop. But Will's templates are in a folder named  "More" in the TeXShop distribution; old users can obtain them by moving  "More" to ~/Library/TeXShop/Templates.
+* 【★】Will Robertson により、新しいテンプレート集が追加されました。これにはたっぷりとコメントが付けられています。ユーザが自分自身の要求に見合うように編集するのを意図してのことです。テンプレートは TeXShop を最初に起動したときにのみ──あるいは、テンプレート・フォルダが ~/Library/TeXShop から完全に取り除かれていると、インストールされます。が、 Will のテンプレートは、 TeXShop ディストリビューション内の「More」という名前のフォルダの中にも入っています ； 以前からのユーザは「More」フォルダを ~/Library/TeXShop/Templates に移すことでテンプレートを入手できます。
+
+* ［☆］Added new macros by Will Robertson to create tables and arrays, to insert a reference,  and to open other project files quickly. These macros have been praised on  the TeX-On-MacOSX mailing list. The macros are available for new users;  older users can obtain them by following simple instructions which come with  TeXShop 1.35.
+* 【★】テーブルや配列を作成したり、参照を挿入したり、他のプロジェクト・ファイルを手早く開くための新しいマクロが、 Will Robertson によって追加されました。これらのマクロは TeX-On-MacOSX メーリングリストで賞賛されているものです。このマクロは新規のユーザが利用可能となっています ； 以前からのユーザは、 TeXShop 1.35 に付属している簡単な指示に従って入手することができます。
+
+* ［☆］Added a macro to examine files in the teTeX tree. For example, if "article.sty" is  typed in the dialog produced by the Macro, kpsewhich is used to find this  file in the tree and open it in TeXShop.
+* 【★】teTeX ツリー内のファイルを調べるためのマクロが追加されました。たとえば、マクロが提示するダイアログに「article.sty」と打ち込むと、 kpsewhitch を使ってこのファイルをツリー内で見つけ出し、 TeXShop で開きます。
+
+* ［☆］There are hidden preferences to set the color of the text in the source window
+* 【★】ソースウィンドウのテキストの色を設定する隠れた環境設定があります──
+
+ defaults write TeXShop foreground_R 0.3
+ defaults write TeXShop foreground_G 0.3
+ defaults write TeXShop foreground_B 0.3
+
+* ［☆］This color will show if syntax coloring is on; otherwise it will be black and then  color can be selected in the Font menu.
+* 【★】この色は「ソースのカラー表示」がオンになっていると現われます ； でなければ黒になり、フォントメニューで色を選択できます。
+
+* ［☆］When used with existing hidden preferences to set the source window background  color, these commands can be used to write source as white on black, or with  other color schemes. TeXShop has new macros to set the source window colors,  and to reset to default colors.
+* 【★】ソースウィンドウの背景色を設定する既存の隠れた環境設定といっしょに使えば、黒地に白文字やその他の色の組み合わせでソースを書くのに、上記のコマンドを使えます。 TeXShop にはソースウィンドウの色を設定したり、またデフォルトの色に戻したりするマクロがあります。
+
+* ［☆］There are hidden preferences to make the source, preview, and console windows  partly transparent.
+* 【★】ソース、プレビュー、コンソールの各ウィンドウの透明度をそれぞれに設定する隠れた環境設定があります。
+
+ defaults write TeXShop ConsoleWindowAlpha 0.75
+ defaults write TeXShop SourceWindowAlpha 0.75
+ defaults write TeXShop PreviewWindowAlpha 0.75
+
+* ［☆］Here an alpha value of 0.00 is completely transparent and an alpha value of 1.00 is  completely opaque. Use these commands cautiously!
+* 【★】ここでアルファ値が 0.00 なら完全に透明となり、アルファ値が 1.00 なら完全に不透明となります。これらのコマンドは用心してお使いください！
+
+* ［☆］TeXShop now has a Statistics panel, which lists the number of words, lines, and  characters in a document. This is obtained by calling
+* 【★】TeXShop に「文書情報」が用意されました──これは文書内の単語数や行数、文字数を表示します。これは次のようなコールで得られるものです──
+
+ detex myfile | wc
+
+* ［☆］When first called, the document on disk is tested. After changes are made to the  document, the "update" button saves the document and calls detex again. The  detex command removes tex commands, but the word count is still only approximate. Input and include files are counted by this command.
+* 【★】最初の呼び出しで、ディスク上の文書がテストされます。文書に変更が施された後、 「アップデート」ボタンで文書を保存し、 detex を再度呼び出します。 detex コマンドが TeX のコマンドを取り除きますが、ワード・カウントは今のところ概算でしかありません。 input ないしは include されたファイルもこのコマンドで勘定されます。
+
+* ［☆］New German Help by Martin Kerz. Kerz also redesigned the TeXShop Help  Window to follow Apple's current guidelines. These changes appear in  English and German, but may not appear in other localizations.
+* 【★】Martin Kerz による新しいドイツ語版のヘルプ。 Kerz はまた TeXShop ヘルプのウィンドウを、 Apple の現行のガイドラインに沿ってデザインし直してくれました。この変更は英語版とドイツ語版で見ることができますが、その他のローカライズ版では見られないかもしれません。（日本語版も新デザインになっています。）
+
+* ［☆］When a file is drag-and-dropped, any alias is now resolved. Thus alias graphic  files (and other files) can be used provided they are dragged and dropped to the  source. Alias files will not work if their names are typed directly because the tex  engine does not understand aliases (it does understand symbolic links).
+* 【★】ファイルをドラッグ＆ドロップした際に、エイリアスが解決されるようになりました。なので、グラフィック（またはその他の）ファイルのエイリアスを、ソースにドラッグ＆ドロップして利用することができます。エイリアス書類の名前をじかに入力しても機能しません──というのも、 TeX エンジンはエイリアスを理解しないからです（シンボリックリンクは理解しますが）。
+
+* ［☆］Several changes were made in the Japanese portions of the code by  Seiji Zenitani, with help from Yu Itoh and Koichi Inoue. There is a new Japanese  encoding, Shift JIS X0213, which will become a new standard in Japan. There is  now utf.sty support for pTeX. Before this change, Japanese pTeX supported only  6000 Kanji characters, but utf.sty supports more than 20,300 characters.  This support is turned on by a preference item in Misc. When on, TeXShop exports  non-ptex chracters as utf.sty codes. For example, unicode characters become  \UTF(Hex code) and non-unicode characters become \CID(glyph ID).
+* 【★】伊東悠さんと銭谷誠司さんのコードにより、日本語環境でいくつかの変更が行なわれました。日本語エンコーディングに新しく Shift JIS X0213 が用意されました──これは日本での新しい標準となるものです。 pTeX 用に utf.sty もサポートされるようになりました。この変更以前には、日本語 pTeX は 6,000 字の漢字しかサポートしていませんでしたが、 uft.sty は 20,300 以上もの文字をサポートします。これは環境設定項目の「詳細」でオンにできます。オンにすると、 TeXShop は pTeX が対応していない文字を utf.sty のコードとして書き出します。たとえば、 Unicode 文字は \UTF{Hex code} となり、非-Unicode 文字は \CID{glyph ID} となります。
+
+* ［☆］Zenitani also added new Japanese default settings. Previously, Japanese ptex  distributors provided their own "altpdflatex" scripts, which was confusing for  beginning users. This new version of TeXShop bundles "altpdflatex-for-ptex"  scripts and installs them in ~/Library/TeXShop/bin. The new Japanese default  settings in Preferences automatically set up TeXShop to use these new scripts.
+* 【★】銭谷さんはまた、日本語用の新しいデフォルト設定も追加しました。これまで日本語 pTeX のディストリビューションは、個々に「altpdflatex」を提供していましたが、これが初心者には混乱をもたらしていました。 TeXShop の新しいバージョンには pTeX でタイプセットするスクリプト（井上浩一さん提供）が組み込まれており、 ~/Library/TeXShop/bin にインストールされます。環境設定にある日本語用の新しいデフォルト設定が、新しいスクリプトを利用できるよう TeXShop を自動的にセットアップします。
+
+* ［☆］Added the following Chinese encodings at the request of Adam Si:  Mac Chinese Traditional, Mac Chinese Simplified, DOS Chinese Traditional,  DOS Chinese Simplified, GBK, GB 2312, and GB 18030.
+* 【★】Adam Si のリクエストにより、以下の中国語エンコーディングが追加されました：Mac Chinese Traditional ・ Mac Chinese Simplified ・ DOS Chinese Traditional ・ DOS Chinese Simplified ・ GBK ・ GB 2312 ・ GB 18030
+
+* ［☆］Added a new Japanese help system by Yoshihisa Okazaki.
+* 【★】岡崎祥久さんにより、新しく日本語ヘルプが追加されました。
+
+* ［☆］Added new Spanish localization and help.
+* 【★】新規のスペイン語版ローカライズとヘルプが追加されました。
+
+* ［☆］TeXShop can now open and write files with extension .dn and .engine.
+* 【★】拡張子 「.dn」 「.engine」の付いた書類を TeXShop で読み書きできるようになりました。
+
+* ［☆］There is a hidden preference
+* 【★】隠れた環境設定──
+
+ defaults write TeXShop BringPdfFrontOnAutomaticUpdate NO
+
+* ［☆］which causes the pdf window to remain where it is when it automatically updates  and is used with an external editor. This preference was requested by a user with an X11 editor and only seems necessary in this case.
+* 【★】これにより、自動更新や、外部エディタ使用の際に、プレビュー・ウィンドウの位置をそのままにします。この環境設定は X11 エディタを使っているユーザからリクエストされたもので、これ以外では需要はなさそうです。
+
+* ［☆］Users sometimes upgrade Mac OS X via "archive and install". After the installation, TeXShop  remains but teTeX is blown away. The first time such users typeset a file, they  see an error dialog reporting that "pdflatex cannot be found." This error dialog has been revised to explain more clearly the likely cause, and resolution, of the  problem.
+* 【★】ユーザは時として「アーカイブとインストール」によって Mac OS X をアップグレードします。インストール後、 TeXShop は残っていますが、 teTeX はかき消えています。こうしたユーザが初めてタイプセットを行なおうとすると、 「pdflatex が見つかりません」とエラー・ダイアログに告げられます。このエラー・ダイアログを改訂し、この問題に関してありえそうな原因、および解決法について、より明瞭に説明するようにしました。
+
+* ［☆］The TeXShop web page now contains a "LaTeX Documentation" section listing  recommended books and links to free LaTeX guides on the internet. The web page  also makes available a number of short LaTeX example files by Will Robertson.
+* 【★】TeXShop の WEB ページに「LaTeX Documentation」というセクションを設け、おすすめの書籍の一覧を載せたり、インターネット上にあるフリーの LaTeX ガイドにリンクを張ったりしました。 WEB ページではまた、 Will Robertson による数多くの簡潔な LaTeX サンプルも利用可能となっています。
+
+###──Bugs fixed（修正されたバグ）
+
+* ［☆］When a large number of windows were open, switching from one window to  another took a long time and yielded a spinning disk; TeXShop was completely  unresponsive during this time. This slowdown was caused by a bug in the Macro code. The problem is now fixed.
+* 【★】多数のウィンドウを開いていると、ひとつのウィンドウから他のウィンドウに切り替えるのに長く時間がかかり、ディスクの急回転を引き起こしていました ； この間、 TeXShop は完全に反応しなくなっていました。このスローダウンはマクロ・コードのバグに起因するものでした。この問題が解消されました。
+
+* ［☆］If a dvi file was opened in a directory without write permission, TeXShop could  not create and display a corresponding pdf file. Now it will create the pdf file  in a temporary directory and display it.
+* 【★】書き込み権限のないディレクトリで dvi ファイルを開くと、 TeXShop は対応する pdf ファイルを生成して表示することができませんでした。そこで pdf ファイルをテンポラリー・ディレクトリに生成して表示するようにしました。
+
+* ［☆］If the abort button was pushed in the console and the user later typed and  pushed RETURN, the program crashed. Fixed.
+* 【★】コンソールにある強制終了ボタンを押し、その後でユーザが入力を行なってリターンを押すと、プログラムがクラッシュしていました。これを修正。
+
+* ［☆］Two minor error dialogs, which should have appeared in a window, instead  appeared on the desktop with an inoperable "OK" button. This is fixed.
+* 【★】ウィンドウ内に表示されるべき２つの地味なエラー・ダイアログが、操作不能の「OK」ボタンとともにデスクトップに表示されていました。これを修正。
+
+* ［☆］In localizations other than English, attempts to get the applescript dictionary  crashed TeXShop. Fixed.
+* 【★】英語以外のローカライズ版において、 AppleScript 辞書を取得しようとするとTeXShop がクラッシュしていました。これを修正。
+
+* ［☆］The Bibtex, etc., tools in the source window did not work if a file had a root  file. Fixed.
+* 【★】文書にルートファイルがあると、ソースウィンドウにある Bibtex などのツールが機能しませんでした。これを修正。
+
+* 環境設定 > コピー > フォーマットを選択できない不具合が修正されました。（1.35c 日本語版）
+
+
+##Version 1.34
+
+* ［☆］Version 1.34 adds extra features to TeXShop and fixes some bugs.
+* 【★】バージョン1.34では TeXShop にさらなる機能を追加し、いくつかのバグを修正しました。
+
+###──New features（新機能）
+
+* ［☆］Added a Matrix Panel by Jonas Zimmermann, zimmerleut@gmx.de. Many thanks.
+* 【★】Jonas Zimmermann （ zimmerleut@gmx.de ）による行列パネルの追加。大変ありがとう。
+
+* ［☆］At the request of Claus Gerhardt, added an extra applescript command, "goto line". For instance
+* 【★】Claus Gerhardt のリクエストにより、AppleScript コマンド「 goto line 」を追補。例──
+
+		tell front document of application "TeXShop"
+		goto line 15
+		end tell
+
+* ［☆］Added a first cut at pdfsync. Clicking on a spot in the pdf file while holding down the command key takes the user to the corresponding point in the source file. If the source file has include files, this operation will open the appropriate include file and take the user to a point in that file. Read the help file "General Help: Pdfsync" for important details. This change depends on pdfsync.sty, a file create by Piero D'Ancona with improvements by Jérôme Laurens.
+* 【★】pdfsync を初めて搭載。コマンドキーを押しながらプレビューウィンドウの一点をクリックすると、ソースファイル内の相当する位置に移動します。ソースファイルに「 include 」されているファイルがあった場合は、対応するファイルを開き、そのファイル内の箇所に移動します。詳細については「全般的なヘルプ」の「 Pdfsync 」の項を参照のこと。この機能は pdfsync.sty に依存します── pdfsync.sty は Piero D'Ancona が作成し Jérôme Laurens によって改良されました。
+
+* ［☆］Also added pdfsync the other way. Clicking on a spot in the source file (including source files with root files) while holding down the command key will select the corresponding page in the pdf file.
+* 【★】さらに pdfsync には別の使い方も。ソースファイル（ルートファイルを設定したものも含む）内の一点を、コマンドキーを押しながらクリックすると、pdf ファイルの対応するページを表示します。
+
+###──Bugs fixed（修正されたバグ）
+
+* ［☆］The TeX, Latex, Bibtex, Makeindex, Metapost, Context, and Metafont buttons  on the toolbar reset the default typesetting engine. This no longer happens. Thus it is possible to hit the Bibtex button and then hit command-T to typeset again.
+* 【★】TeX、LaTeX、BibTeX、MakeIndex、MetaPost、ConTeXt、それに MetaFont といったツールバーのボタンが、デフォルトのタイプセット・エンジンをリセットしてしまう。これはもう生じません。なので、BibTeX ボタンを押した後、command + T で再度タイプセットを行なうことが可能です。
+
+* ［☆］The abort button on the console window did not stay fixed when the window was resized. Thanks to Sean Luke for pointing out these first two errors.
+* 【★】コンソールのウィンドウサイズを変えると「 abort 」ボタンがズレてしまう。以上２つのエラーの指摘を Sean Luke に感謝。
+
+* ［☆］The command-1 keystroke switches back and forth between the source and preview windows. In previous versions, this did not work when a source window had a root file set by myfile.texshop or %SourceDoc. This is now fixed. Clicking command-1 while in the source brings up the corresponding preview window. Clicking command-1 again brings up the original source file. A given preview window may have several source files. Command-1 will bring up the last source file which was switched to the preview using command-1, or the root source file if there was no previous switch.
+* 【★】command + 1 のキー操作でソースとプレビューウィンドウを交互に切り替え可能です。以前のバージョンでは、myfile.texshop あるいは %SourceDoc でルートファイルが設定されているソースウィンドウでは、これが機能しませんでした。それを修正。ソースファイルで command + 1 を押すと、対応するプレビューウィンドウを前面にします。再び command + 1 を押せば、元のソースファイルが前面になります。プレビューウィンドウは複数のソースファイルに対応しているかもしれないので、command + 1 で前面に来るのは、プレビューウィンドウへの切り替えを最後に command + 1 で行なったソースファイルとなります──以前に切り替えを行なったソースがなければ、ルートソースになります。
+
+* ［☆］New Spanish help files by Juan Luis Varona Malumbres. Thanks.
+* 【★】Juan Luis Varona Malumbres による新規のスペイン語ヘルプ。ありがとう。
+
+* ［☆］Printing now respects the "scale" setting in Page Setup. It does not respect the "paper size" setting since paper size is set in teTeX. Printing works like this: the dimensions of the printed document are set by tex and encoded in the pdf file; this pdf is resized by the scale factor if this factor is not 100%, but otherwise is placed full size and centered on the printed page; usually the document size and printed page size are the same, but in rare cases when they are not, the edges of the document might be cut off.
+* 【★】印刷時に、ページ設定での「拡大縮小」を順守するようにしました。「用紙サイズ」については、teTeX 内で設定されるので顧慮していません。印刷は次のように行なわれます：印刷する文書の寸法は TeX で設定され、pdf ファイル内にコード化される；pdf は拡大縮小率が100％でない場合はリサイズされるが、そうでなければフルサイズで用紙中央に配置される；通常は文書のサイズと用紙のサイズは同じですが、違っている場合には、文書のふちを切り落とすことになるかもしれません。
+
+##Version 1.33
+
+* ［☆］Version 1.33 adds extra features to TeXShop and fixes some bugs.
+* 【★】バージョン1.33では TeXShop にさらなる機能を追加し、いくつかのバグを修正しました。
+
+###──New features（新機能）
+
+* ［☆］The changes in version 1.33 support improved apple scripting, better macro support, and improved interaction with external editors.
+* 【★】バージョン1.33の改良点は、AppleScript の拡充、マクロのサポートの向上、外部エディタとの相互関係の改善です。
+
+* ［☆］Improved macro support was prompted by Claus Gerhardt, who wrote several useful scripts included with version 1.33. For example, one script calls htlatex to typeset a latex file for the web. The script saves the source, typesets, and opens the resulting html file in Safari. Thus the script behaves exactly like the Latex typesetting button except that it creates an html rather than a pdf, and displays the html in Safari rather than TeXShop. An advantage of this approach is that users can create their own scripts similarly and thus add features to TeXShop without waiting for new program code.
+* 【★】マクロのサポートの改善は Claus Gerhardt により促されました──彼はバージョン1.33に含まれるいくつかの便利なスクリプトを書きました。たとえば、あるスクリプトは htlatex を呼び出して LaTeX ファイルをウェブ用にタイプセットします。スクリプトは、ソースを保存し、タイプセットし、結果の html ファイルを Safari で開きます。つまりちょうど LaTeX のタイプセット・ボタンのように動作するわけですが、違っているのは、pdf ファイルではなく html ファイルを生成し、TeXShop ではなく Safari で html を表示するということです。この取り組みの優れている点は、ユーザ自身がスクリプトを書くことで同様に、新しいプログラムコードを待たずとも TeXShop に機能を追加できることです。
+
+* ［☆］TeX typesetting often requires a sequence of operations. To process a file with a bibliography, the source must be run through latex, bibtex must be run, and latex must be run twice more. A script is included to do this automatically. The script saves the source before the first latex run and updates the preview display at the end. Users can easily customize this script for their own workflow.
+* 【★】TeX のタイプセットではしばしば、連続的な操作が必要になります。参考文献目録を含むファイルを処理するには、LaTeX に次いで BibTeX を実行し、さらにもう２度 LaTeX を実行させねばなりません。これを自動的に行なうスクリプトが入っています。このスクリプトは最初に LaTeX を実行する前にソースを保存し、最後にプレビュー画面を更新します。ユーザはそれぞれのワークフローに合わせて簡単にこのスクリプトをカスタマイズできます。
+
+* ［☆］Additional scripts convert the tex source file to a file with Windows line feed convention, or a file with Macintosh 9 line feed conventions, or a file with Unix line feed conventions. Mac OS X understands all line feeds without help, but many computers are not so smart; the conversions are useful when sending files to friends. The "flip" binary used to do these conversions was written by Craig Stuart Sapp. See http://ccrma-www.stanford.edu/~craig/utility/flip/ for details.
+* 【★】追加されたスクリプトには、ソースファイルを Windows の改行コードに変換したり、Mac OS 9 の改行コードや UNIX の改行コードに変換したりするものもあります。Mac OS X はいずれの改行コードでもそのまま理解しますが、多くのコンピュータはそれほどスマートではありません；改行コードの変換は、ファイルを友人に送る際に重宝します。こうした変換は Craig Stuart Sapp の作ったバイナリ「 flip 」を利用しています。詳細については http://ccrma-www.stanford.edu/~craig/utility/flip/ を参照のこと。
+
+* ［☆］A script is included to call pdfselect and extract portions of pdf documents. A user could request one file containing pages 3 through 7 of the tex document, one containing page 29, and one containing pages 31 through 36. The advantage of placing this code in the Macros menu is that a user interface is provided, so users don't need to remember calling conventions for pdfselect and don't need to switch to the Terminal.
+* 【★】pdfselect を呼び出すスクリプトも入っており、これは pdf 文書の一部を抜粋します。１つ目のファイルには TeX 文書の３〜７ページが含まれ、２つ目の文書には29ページが、３つ目のファイルには31〜36ページが含まれる、というようなことが可能です。このコードをマクロ・メニューに入れておく利点は、ユーザ・インターフェースが用意されているということです──ユーザは pdfselect を呼び出すときの約束事を覚えておかずともよいし、Terminal に切り替える必要もありません。
+
+* ［☆］A #DOCUMENTNAME# variable was added to the Macro editor, giving applescript commands the name of the calling document.
+* 【★】#DOCUMENTNAME# 変数がマクロエディタに追加されました──これは呼び出す文書の名前を AppleScript コマンドに渡します。
+
+* ［☆］The following applescript commands were added to TeXShop. Consult the TeXShop help files for details about writing your own scripts using these commands.
+* 【★】以下の AppleScript コマンドが TeXShop に追加されました。これらのコマンドを用いてスクリプトを書くための詳細については、TeXShop ヘルプをお調べください。
+
+	* typeset
+	* latex
+	* tex
+	* bibtex
+	* context
+	* metapost
+	* makeindex
+	* typesetinteractive
+	* latexinteractive
+	* texinteractive
+	* bibtexinteractive
+	* contextinteractive
+	* metapostinteractive
+	* makeindexinteractive
+	* typeset
+	* refreshpdf
+	* refreshtext
+	* taskdone
+
+* ［☆］Improved support was added for external editors, following prodding by Joachim Kock. Several changes have been made:
+* 【★】Joachim Kock からの促しにより、外部エディタに対するサポートを改善。いくつかの変更が行なわれました：
+
+* ［☆］There is now a preference to turn on continuous updating of the preview window if the user is running in external editor mode. Once each second the program checks to see if the pdf file has been updated. If so, it refreshes the pdf display.
+* 【★】外部エディタ・モードで作業しているのであれば、プレビューウィンドウを継続的に更新する環境設定をオンにできるようになりました。TeXShop は１秒に１度、pdf ファイルが更新されているかどうかをチェックします。更新されていれば、pdf 画面が再描画されます。
+
+* ［☆］The interval between refresh checks is controlled by a hidden preference item named RefreshTime. To reset to another interval in seconds (say every 2.19 seconds)
+* 【★】更新チェックの間隔は、RefreshTime という隠れた環境設定項目でコントロールできます。秒単位で間隔を（たとえば2.19秒ごとに）変更するには次のようにします──
+
+	defaults write TeXShop RefreshTime 2.19
+
+* ［☆］Applescript command support has been added to TeXShop so external applications can send commands to it. For external editors, the important script commands are
+* 【★】AppleScript コマンドのサポートが追加されたので、外部のアプリケーションから TeXShop にコマンドを送れるようになりました。外部エディタで重要となるのは以下のようなスクリプト・コマンドです──
+
+	* latexinteractive
+	* texinteractive
+	* bibtexinteractive
+	* contextinteractive
+	* metapostinteractive
+	* makeindexinteractive
+	* typesetinteractive
+	* refreshpdf
+	* taskdone
+	* open_for_externaleditor
+
+* ［☆］The first seven commands call TeXShop's typesetting engine. When one of these commands is called, control immediately returns to the calling program even though the typesetting operation is not complete. The taskdone command returns FALSE while this operation continues and TRUE when it is done, so a calling program wishing to send several commands can send one command and then test that it has been completed before sending another command.
+* 【★】最初の７つのコマンドは、TeXShop のタイプセット・エンジンを呼び出します。これらのコマンドの１つが呼び出されると、タイプセット処理が完了していなくても、コントロールはすぐに呼び出し側のプログラムに戻ります。taskdone は、処理中は FALSE を返し、完了すれば TRUE を返します──なので、呼び出し側のプログラムでいくつかのコマンドを送りたい場合にも、ひとつのコマンドを送った後、それが完了したかどうかを調べてから、次のコマンドを送ることができます。
+
+* ［☆］Refreshpdf updates the preview display, and can be used instead of continuous updating to control that display. Typesetting commands automatically update the display upon completion.
+* 【★】Refreshpdf はプレビュー画面を更新しますが、継続的な自動更新の代わりに、これを使って画面をコントロールできます。処理が終了次第、タイプセット・コマンドが自動的に画面を更新します。
+
+* ［☆］The open_for_externaleditor command opens a .tex file, calling "Open for Preview..."
+* 【★】open_for_externaleditor コマンドは「プレビューを開く...」で .tex ファイルを開きます。
+
+* ［☆］Additional features not related to scripting or external editors have also been added:
+* 【★】スクリプティングや外部エディタとは関連しない機能も追加されました：
+
+* ［☆］"Select All" can be used to select the full page of pdf output in selection mode. There is one restriction; in Multi-Page and Double-Multi-Page mode, select all is only active if the document has at most 20 pages, since otherwise the selected pdf will be enormous and bring the machine to a crawl.
+* 【★】プレビューのマウスモードが「選択」になっている状態で「全てを選択」を使って pdf 出力の全ページを選択できます。ただし制限事項が１つあります；ページレイアウトが連続ページもしくは連続見開きページになっているときは、文書が最大で20ページの場合にのみ全てを選択することができます──そうでないと、選択した pdf が巨大になり、マシンの速度を低下させるので。
+
+* ［☆］A preference item now allows users to distill with Apple's pstopdf rather than ghostscript. This only works in Panther because pstopdf is only in Panther. If the preference is chosen but Panther is not running, the old ghostscript code will be used. When the preference is chosen, ghostscript is no longer needed for internal TeXShop scripts, but it may still be required for teTeX style files. One such case is epstopdf.sty, used to automatically convert eps files to pdf format during typesetting.
+* 【★】ghostscript ではなく Apple の pstopdf で pdf を生成するよう環境設定項目で選べるようになりました。これは Panther でのみ機能します── pstopdf が Panther 固有のものなので。環境設定で選択したにもかかわらず Panther が機能しないようなら、従来の ghostscript コードが使われます。この環境設定を選択した場合、ghostscript はもう TeXShop 内部のスクリプトには必要ありませんが、teTeX のスタイルファイルではまだ必要とされるかもしれません。一例として epstopdf.sty がありますが、これはタイプセット時に eps ファイルを pdf 形式へと自動的に変換するのに用いられます。
+
+* ［☆］Zenitani provided additional drag and drop support. The new version reports an error if the filename of the dropped file contains a space. The new code also permits customization, in a somewhat strange way. To customize drag and drop code, add a new submenu to the Macros menu titled "Drag & Drop". Inside this folder, insert items for file types and make the text of each item be the code to be produced by drag and drop. For example, one item might be called ".pdf" and the body of this item might be "\includegraphics[#INS#]{%r}" where neither item would include the quotation marks. In these inclusions,
+* 【★】銭谷さんにより、さらなるドラッグ＆ドロップのサポートが提供されました。新しいバージョンでは、ドロップしたファイルの名前にスペースが含まれているとエラーが出されます。新しいコードは、いくぶん奇妙な方法でカスタマイズも可能です。ドラッグ＆ドロップのコードをカスタマイズするには、マクロ・メニューに「 Drag & Drop 」という名前で新しいサブメニューを追加します。このフォルダ内に、ファイルタイプ（拡張子）ごとに項目を立て、各項目の「内容」をドラッグ＆ドロップされたときに実行されるコードにします。たとえば、ある項目が「 pdf 」だった場合、この項目のコード部分は "\includegraphics[#INS#]{%r}" となるでしょう──どの項目でも引用符は含みません。こうした取り込み用に、次のような短縮形を利用してもらえます：
+* 訳注：In these inclusions, 以下に the following abbreviations may be used: を補足。
+
+	%F = full path of an dropped file ──ドロップされたファイル名（絶対パス）
+	%f = dropped filename ──ドロップされたファイル名
+	%r = relative path of the dropped file ──ドロップされたファイル名（相対パス）
+	%n = filename without extension ──拡張子なしのファイル名
+	%e = extension ──拡張子
+
+* ［☆］If an extension is not listed in the Drag & Drop menu, or if there is no such menu, then drag and drop behaves as Zenitani prescribed, so most users won't need to customize the code.  German help has been updated by Martin Kerz, the Italian localization has been updated by Nicola Vitacolonna, the Spanish help was updated by Juan Luis Varona Malumbres, the French localization was updated by Hendrik Chaltin, and a Romanian localization was added by Andrei Teleman. Thanks!
+* 【★】拡張子が Drag & Drop メニューに挙げられていなければ、あるいはこのメニュー自体がなければ、ドラッグ＆ドロップは銭谷さんが規定しておいたように動作します──なので、ほとんどのユーザはコードをカスタマイズする必要はないでしょう。
+* 【★】Martin Kerz によりドイツ語版のヘルプがアップデート、Nicola Vitacolonna によりイタリア語版のローカライズがアップデート、Juan Luis Varona Malumbres によりスペイン語版のヘルプがアップデート、Hendrik Chaltin によりフランス語版のローカライズがアップデート、Andrei Teleman によりルーマニア語版のローカライズが追加されました。ありがとう！
+
+* ［☆］Macros can now be called when the preview window is active; commands which insert text will be deactivated in this mode. A toolbar item for the Preview window was added so the Preview toolbar can display a Macros button.
+* 【★】プレビューウィンドウがアクティブになっているときにもマクロを呼び出せるようになりました；ここではテキストを挿入するコマンドは無効になります。プレビューウィンドウ用のツールバー項目が追加されたので、プレビューのツールバーにマクロ・ボタンを表示できます。
+
+* ［☆］An "Abort" button was added to the console for people who want to stop the typesetting program in midstream. This is a minor change.
+* 【★】途中でタイプセット・プログラムを止めたいユーザ用に「 Abort 」ボタンが追加されました。これはマイナー・チェンジです。
+
+* ［☆］Code by Elliott Hughes was added to clean up some of the code calling a latex, tex, bibtex, etc., task. If the binary file is not found, the program now puts up an error message explaining the error and asking if the preferences bin path is correct. This will be useful for those running fink who forget to change the preference.
+* 【★】Elliott Hughes によるコードが追加され、LaTeX、TeX、BibTeX などを呼び出すコードがクリーンアップされました。バイナリ・ファイルが見つからない場合、プログラムはエラー状況を説明するエラーメッセージを出し、環境設定の bin パスが正しいかどうかを問い合わせます。これは Fink を使っていて環境設定を変更し忘れたユーザの役に立ちます。
+
+* ［☆］At the request of Joachim Kock, when TeXShop opens a file for Preview, or is in external editor mode and opens a file, the program now compares the dates of the source and preview files. If the preview file is not up to date or does not exist at all, the source file is automatically typeset. There is a hidden preference to turn this behavior off, but it is on by default: To turn it off
+* 【★】Joachim Kock のリクエストにより、「プレビューを開く...」でファイルを開いた場合や、TeXShop を外部エディタ・モードにしてファイルを開いた場合に、ソースとプレビュー・ファイルの日付を比較するようにしました。もしプレビュー・ファイルが古くなっていたり、まるっきり存在していなかった場合には、自動的にソースファイルをタイプセットします。この動作はデフォルトでオンになっていますが、オフにする隠れた環境設定があります：オフにするには──
+
+	defaults write TeXShop ExternalEditorTypesetAtStart NO
+
+###──Bugs fixed（修正されたバグ）
+
+* ［☆］A few users reported that their printers added a slight yellow background to the page. Only a few printers had that problem. Frank Stengel discovered that it was caused by a NSEraseRect call in the print drawing routine. This call has been removed; now TeXShop prints using only one line, the vanilla Cocoa call [myRep draw].
+* 【★】幾人かのユーザからの報告では、プリンターが薄黄色の背景をページに付け加えてしまうとのことでした。少数のプリンターでのみこの問題が生じていました。Frank Stengel により、これはプリント描画ルーチンにおける NSEraseRect の呼び出しに起因するものとわかりました。このコールは取り除かれました；今では TeXShop は、Cocoa の vanilla コール [myRep draw] １行だけで印刷を行なっています。
+
+* ［☆］In Panther, all Text objects offer word completion. If a portion of a word is typed and option-escape is typed, the system will offer a list of possible completions. This works in TeXShop, TextEdit, and other Cocoa programs. But TeXShop's Command completion was broken in Panther, and made it impossible to use this new feature. This is fixed.
+* 【★】Panther では、すべてのテキスト・オブジェクトに単語の補完が用意されています。単語の一部を入力して option + escape を押せば、補完可能なリストをシステムが提示します。これは TeXShop や TextEdit、その他の Cocoa プログラムで機能します。しかし TeXShop のコマンド補完が Panther で不具合となり、この新しい機能を使えませんでした。これを修正しました。
+
+* ［☆］TeXShop has an applescript command to add text, but this command did not update the undo stack. This was fixed by Stefan Walsen; his patch is in version 1.33.
+* 【★】TeXShop にはテキストを追加する AppleScript コマンドがありますが、このコマンドが undo stack を更新していませんでした。これは Stefan Walsen により修正されました；彼のパッチがバージョン1.33に入っています。
+
+* ［☆］If the user printed the source and later printed the typeset document, the document would be lowered on the page. This is fixed.
+* 【★】ソースを印刷した後で、タイプセットした文書を印刷した場合、文書が下がってしまう。これを修正しました。
+
+* ［☆］Jerry Keough found a strange bug when using TeXShop in Jaguar. If the user's preference setting asked that no empty document appear at startup and if the user opened a document, made the pdf window active, and then reached over and closed the source window, the next menu use would crash the program. This bug did not occur in Panther. It is fixed.
+* 【★】Jerry Keough が TeXShop を Jaguar で使用中に奇妙なバグを発見。環境設定で起動時に新しいファイルを作成しないよう設定していた場合に、文書を開いて pdf ウィンドウをアクティブにし、その後でソースウィンドウを閉じると、次に使うメニュー項目がプログラムをクラッシュさせてしまう。このバグは Panther では生じません。修正しました。
+
+##Version 1.32
+
+* ［☆］Version 1.32 adds two extra features to TeXShop and fixes some bugs.
+* 【★】バージョン1.32では TeXShop に２つの機能をさらに追加し、いくつかのバグを修正しました。
+
+###──New features（新機能）
+
+* ［☆］There is a new menu item, "New Tag", which inserts an empty tag in the source text and positions the cursor so the user can add the name of the tag. As a corollary, there is now a keystroke to add a new tag; the keystroke is command-2.
+* 【★】新しいメニュー項目「タグを追加」は、ソーステキストに空のタグを挿入し、タグの名前を追加できるようカーソルを配置します。そのうえで、新しいタグを追加するキー操作を用意しました；command + 2 です。
+
+* ［☆］In Applescript macros, the terms #LOGPATH#, #AUXPATH#, #INDPATH#, #BBLPATH#, and #HTMLPATH# will now be recognized; this has been added at the request of Claus Gerhardt.
+* 【★】AppleScript マクロにおいて、#LOGPATH#、#AUXPATH#、#INDPATH#、#BBLPATH#、#HTMLPATH# が認識されるようになりました；これは Claus Gerhardt のリクエストにより追加。
+
+* ［☆］There is a new option to set the program called by MetaPost. See the TeXShop help file for an explanation.
+* 【★】MetaPost で呼び出すプログラムの設定用に、新しいオプションを用意しました。解説については TeXShop ヘルプをご覧ください。
+
+* ［☆］The drag and drop code has been improved by Seiji Zenitani. Dropping files of types pdf, jpg, jpeg, tif, tiff, eps, or ps on the source document will produce \includegraphics and a reference to the file. Dropping a file of type cls, sty, or bib will \documentclass, \usepackage, or \bibliographystyle and a file reference. Dropping any other text file will produce \input and a file reference.
+* 【★】ドラッグ＆ドロップのコードが銭谷誠司さんにより改善されました。pdf、jpg、jpeg、tif、tiff、eps、ps といった形式のファイルをソース文書にドロップすると、\includegraphics コマンドが挿入され、ファイルへの参照が行なわれます。cls、sty、bib 形式のファイルをドロップすれば、\documentclass、\usepackage、\bibliographystyle コマンドが挿入され、ファイルへの参照が行なわれます。その他のテキスト・ファイルをドロップした場合には、\input コマンドが挿入され、ファイルへの参照が行なわれます。
+
+###──Bugs fixed（修正されたバグ）
+
+* ［☆］Although the magnification level can increase to 1000 in version 1.31, the arrow keys next to the magnification control only allowed values up to 400. This is fixed.
+* 【★】バージョン1.31でズーム倍率が1000まで引き上げられましたが、倍率コントロールの隣りにある矢印では400までしか上げられませんでした。これを修正。
+
+* ［☆］If the preview window's toolbar was in text-only mode and the magnification panel was selected, the resulting small dialog window would not go away in 1.31. This is fixed.
+* 【★】プレビューウィンドウのツールバーを「テキストのみ」の表示にしてズーム倍率を選択すると、倍率を入力する小窓が1.31ではずっと残ってしまっていました。これを修正。
+
+* ［☆］In Preferences, if the user set the tab size or the preview window magnification and then cancelled, the new values would still appear when the Preference panel was again displayed. This is fixed.
+* 【★】環境設定において、タブ幅の文字数、あるいはプレビューウィンドウのズーム倍率を設定してキャンセルすると、ふたたび環境設定パネルを開いたときに、キャンセルしたはずの設定がそのまま残っていました。これを修正。
+
+* ［☆］Suppose the preference to place the first page on the right side is active. In 1.31, the left arrow key did now work in double page mode, and the right arrow key stopped one page before the end. In double multipage mode, the end key, the page down key, and the right arrow key stopped before displaying the last page. All of these problems are fixed.
+* 【★】環境設定で見開きページが「右からスタート（片面）」になっているとします。1.31において、左矢印キーはまあ「見開きページ」で機能していましたが、右矢印キーは最後の１ページ手前で止まってしまっていました。「複数見開きページ」では、end キー、ページダウン・キー、それに右矢印キーが最終ページを表示する手前で止まっていました。こうした問題をすべて修正。
+
+##Version 1.31
+
+* ［☆］Version 1.31 adds some extra features to TeXShop and fixes several bugs.
+* 【★】バージョン1.31では TeXShop にさらなる機能を追加し、いくつかのバグを修正しました。
+
+###──New features（新機能）
+
+* ［☆］Macros items are now specific to the typesetting engine set in the current window. Two default sets are created when TeXShop first starts, one for Latex and one for Context. (The Context set was created by Hans Hagen; thanks!). Suppose a different engine is selected, say TeX. When it starts, it will have the default Latex macros. But if this set of Macros is edited with the Macro editor, the new set will always be associated with TeX, while the old Latex macros will continue to be associated with Latex. Of course the Latex macros can also be changed.
+* 【★】現在のウィンドウで設定されているタイプセット・エンジンごとに、マクロ項目をそれぞれ特有のものにできるようになりました。TeXShop を最初に起動した際に、２つのデフォルトのマクロ・セットが作成されます──ひとつは LaTeX 用で、もうひとつは ConTeXt 用です（ ConTeXt 用のセットは Hans Hagen により作成されました；ありがとう！）。違うタイプセット・エンジン（たとえば TeX ）が選択されたとします。当初はデフォルトの LaTeX 用のセットになっています。が、このマクロ・セットをマクロエディタで編集すると、編集したセットが TeX 使用時には使われるようになります──以前の LaTeX マクロはそのまま LaTeX で使われます。もちろん LaTeX マクロも編集可能です。
+
+* ［☆］A new preference item allows the first page in the two double page modes to be either on the left or on the right. Books usually put this page on the right, so that is the default preference.
+* 【★】新しい環境設定項目により、見開きページモードの最初のページを、左始まり右始まりのいずれにもできるようになりました。書籍では通常、最初のページは右にあるので、デフォルトの設定は右始まりになっています。
+
+* ［☆］The preference dialog has a new pulldown menu to reset preferences to default values. This addition was requested by Seiji Zenitani for users in Japan who must cope with three different versions of pTeX. These users can now rapidly set preferences without consulting documentation on web sites.
+* 【★】環境設定ダイアログに新しいプルダウンメニューを設け、設定プロファイルをデフォルト値にリセットできるようにしました。この追加は銭谷誠司さんからのリクエストによるもので、３つの異なる版の pTeX に対応する必要がある日本のユーザ向けです。日本のユーザのみなさんは、ウェブサイトにあるドキュメントを調べずとも、素早く環境設定を行なえるようになりました。
+
+* ［☆］The largest possible magnification in the preview window is now 1000 (previously it was 400).
+* 【★】プレビューウィンドウでの最大ズーム倍率が1000になりました（以前は400でした）。
+
+* ［☆］Additional French menu translations by Hendrik Chaltin; thanks!
+* 【★】Hendrik Chaltin によりフランス語訳のメニューを追加；ありがとう！
+
+###──Bugs fixed（修正されたバグ）
+
+* ［☆］Three Panther problems are fixed. A few interface changes were made to improve appearance in Panther. This release is essential for Panther.
+* 【★】Panther がらみの問題を３つ修正。Panther での外観を改善するために、いくつかのインターフェイスを変更しました。今回のリリースは Panther への対応に欠くことのできないものです。
+
+	* ［☆］In Panther, older versions of TeXShop refuse to create new files, although they can open existing files. This was fixed by adding two lines to the "displayName" code.
+	* 【★】Panther において、古いバージョンの TeXShop が、既存のファイルは開くものの、新規書類を作成しない──これは「 displayName 」コードに２行追加して修正しました。
+
+	* ［☆］In Panther, the small yellow tags which display the current page when scrolling in multipage and double multipage display formats were blank. Also, the small yellow tags which display the size of a selection rectangle to copy a portion of the pdf window were blank. This is fixed.
+	* 【★】Panther では、「見開きページ」もしくは「複数見開きページ」でスクロールをかけたときに、現在のページ数を表示する小さな黄色いタグが空白になっていました。また、プレビューウィンドウの一部をコピーしようとして選択した方形部分のサイズを表示する小さな黄色いタグも空白なっていました。これを修正。
+
+	* ［☆］On my system, Panther spellchecking often fails for all programs. This happens at boot time. The computer boots up, but even if the first program used is TextEdit or Mail, it refuses to "spell check as you type" and the "Spelling dialog" refuses to appear. I suspect this is due to a defective third party program on my disk, since other Panther users haven't seen the problem. But I haven't been able to isolate the bug. Once the problem occurs, TextEdit and Mail have minor text input glitches which are cured by turning off continuous spell checking. TeXShop had more serious glitches in this situation. So in 1.31, extra code has been added to turn off continuous spell checking when TeXShop starts if the spell checker is not available.
+	* 【★】私のシステムでは、いずれのプログラムにおいても頻繁に Panther のスペルチェックがうまく機能しなくなります。これは起動時に発生します。コンピュータは起動しますが、最初に使うプログラムが TextEdit ないしは Mail であっても、「あなたが入力するのに合わせてスペルチェック」してくれませんし、「スペル・ダイアログ」も出してくれません。これは私のディスク上にあるサードパーティ製のプログラムの不具合ではないかと思われます──よその Panther ユーザはこの問題に遭遇していないのです。しかし、私は今のところバグを発見できていません。いったん問題が発生すると、TextEdit と Mail でのテキスト入力に些細な支障が生じますが、これは入力中の自動スペルチェックをオフにすることで直ります。こうした状況で、TeXShop にはもっと深刻な障害がありました。なので1.31では、スペルチェックが利用可能でない場合に、TeXShop 起動時に入力中の自動スペルチェックをオフにする余分なコードを追加しました。
+
+* ［☆］Fixed a bug reported by Luis Sequeira: when text was dragged within the source window, it was always copied and pasted. It should have been cut and pasted unless the option key was down. This is fixed.
+* 【★】Luis Sequeira により報告されたバグの修正：ソースウィンドウ内でテキストをドラッグした際に、コピーされペーストされる。オプションキーを押しながらでないかぎり、カットされペーストされるべきである。これを修正。
+
+* ［☆］Juan Luis Varona Malumbres slightly improved Spanish help (small icon for the list of help files in the drawer).
+* 【★】Juan Luis Varona Malumbres がスペイン語ヘルプをいくらか改善（ドロワーに表示されるヘルプ・ファイルのリストの小アイコン）。
+
+* ［☆］In two page mode, typesetting no longer scrolls to the first page.
+* 【★】見開きページで表示しているとき、タイプセット後に最初のページに移動しないようにしました。
+
+* ［☆］The new page and magnification buttons retain firstResponder status (as before 1.29) so users can experiment with several settings without clicking again for each experiment.
+* 【★】新しいページ表示ボタンおよびズーム倍率ボタンでは（1.29以前のように）テキストフィールドが選択された状態〔 firstResponder 〕になっているので、いちいちクリックすることなく、いろいろな設定を試してみることができます。
+
+* ［☆］In version 1.30 and before, if the user input an impossible line into the "Go To Line" dialog, the program could crash; this is fixed. Thanks to Eric Seidel for the bug report.
+* 【★】バージョン1.30以前では、「移動行指定」ダイアログで不可能な行数を入力した場合、プログラムがクラッシュすることがありました；これを修正。このバグの報告を Eric Seidel に感謝。
+
+* ［☆］Kevin Ballard, kevin@sb.org, contributed a new English.lproj folder with revised placement of interface items in preferences, slightly revised menu items, and other changes to improve the look of the interface in Panther. Many thanks!
+* 【★】環境設定項目のインターフェイスの配置を見直し、メニュー項目をいくらか修正し、その他にも Panther でのインターフェイスを改善した新しい English.lproj フォルダを Kevin Ballard（ kevin@sb.org ）に提供してもらいました。どうもありがとう！
+
+* ［☆］Made spacing changes for Panther in the German preference panel. Thanks to Martin Kerz for the suggestions.
+* 【★】ドイツ語版の環境設定パネルで Panther 用にスペースを変更。Martin Kerz の提案に感謝。
+
+* ［☆］There is a hidden preference item to turn off tag computation: "defaults write TeXShop TagSections NO" but this preference was disabled somewhere along the line and certainly in 1.30. It is enabled again.
+* 【★】タグの自動追加機能をオフにする隠れた環境設定を用意しました：「 defaults write TeXShop TagSections NO 」がそれですが、この環境設定はいつの間にか（1.30では確実に）使えなくなっていました。これが再び使用可能になりました。
+
+* ［☆］The Preference window is no longer hidden when the program is deactivated.
+* 【★】TeXShop がアクティブでないときにも環境設定ウィンドウが隠れなくなりました。
+
+
+----

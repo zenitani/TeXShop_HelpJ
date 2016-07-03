@@ -1,14 +1,14 @@
-[[TeXShop]] の日本語ヘルプファイルのアーカイブ (v1-1) です。
+TeXShop の日本語ヘルプファイルのアーカイブ (v1-1) です。
 
 作業当時の日英対訳テキストをアップしています。
 
 ----
-'''Version 2.10b'''
+Version 2.10b
 ----
 
-*Basic Help（基本的なヘルプ）（その１）
+#Basic Help（基本的なヘルプ）（その1）
 
-**Preliminaries（まえがき）
+##Preliminaries（まえがき）
 
 ［☆］TeXShop is a Mac OS X program which can typeset TeX and LaTeX files and preview the output on the screen. The program usually typesets using pdftex or pdflatex instead of tex or latex. These programs output pdf files rather than dvi files. Since pdf is the native graphics format of Mac OS X, it is easy to display the output on the screen. Pdftex and pdflatex were written by Han The Thanh, Petr Sojka, and Jiri Zlatuska.
 
@@ -25,33 +25,33 @@
 【★】その前に、日本語ユーザ用に pTeX の導入について、次項「pTeX と TeXShop で日本語環境を構築する」で簡単に述べておきます。
 
 
-**pTeX と TeXShop で日本語環境を構築する（ Getting started with pTeX and TeXShop ）
+##pTeX と TeXShop で日本語環境を構築する（ Getting started with pTeX and TeXShop ）
 
 くりかえしますが、TeXShop に TeX は含まれていません。ですから TeXShop とは別に TeX パッケージをインストールしておく必要があります。英語環境では Gerben Wierda さんによる i-Installer でのインストールが推奨されていますが、日本語による TeX 文書の作成もお望みなら、pTeX を含むパッケージを用いるべきでしょう。pTeX（ Publishing TeX ）は、横組みだけでなく縦組みの日本語機能も追加した日本語TeX で、アスキーにより作成されました。詳細は http://www.ascii.co.jp/pb/ptex/index.html を参照してください。
 
 上記のウェブサイトでもソースファイルを配布していますが、 pTeX 以外にも dvipdfmx や Ghostscript といった関連プログラムをインストールする必要があります。幸いなことに Mac OS X 用にコンパイル済みのバイナリ・パッケージがいくつか配布されており、これらを使うことで、容易にインストールできるようになっています。2006年12月時点で、入手可能なパッケージについて以下に示します。
 
--pTeX(sjis) + JMacros package for Mac OS X（小川版）
---http://www2.kumagaku.ac.jp/teacher/herogw/
---Big と Small ２つの pTeXパッケージが用意されていますが、Big［180MB］の選択をお勧めします（コンポーネントの要不要の判別がつかない初心者の方も pdftex を必要とする理工系の方も）。これに加えて Ghostscript もダウンロードしてインストールします。更新やバグ修正が早いことに加え、 「文系縦組用」に便利なツール類が含まれています。熊本学園大学の小川弘和先生により配布されています。
+* pTeX(sjis) + JMacros package for Mac OS X（小川版）
+	* http://www2.kumagaku.ac.jp/teacher/herogw/
+	* Big と Small ２つの pTeXパッケージが用意されていますが、Big［180MB］の選択をお勧めします（コンポーネントの要不要の判別がつかない初心者の方も pdftex を必要とする理工系の方も）。これに加えて Ghostscript もダウンロードしてインストールします。更新やバグ修正が早いことに加え、 「文系縦組用」に便利なツール類が含まれています。熊本学園大学の小川弘和先生により配布されています。
 
--［改訂第４版］LaTeX2e美文書作成入門
---http://oku.edu.mie-u.ac.jp/~okumura/bibun4/
---三重大学の奥村晴彦先生が書かれた本で、国内の TeX の入門／参考書としては定番のものです。付録 CD-ROM に pTeX と ghostscript のコンパイル済みバイナリ・パッケージが収録されています。
+* ［改訂第４版］LaTeX2e美文書作成入門
+	* http://oku.edu.mie-u.ac.jp/~okumura/bibun4/
+	* 三重大学の奥村晴彦先生が書かれた本で、国内の TeX の入門／参考書としては定番のものです。付録 CD-ROM に pTeX と ghostscript のコンパイル済みバイナリ・パッケージが収録されています。
 
 また、この他にも、Fink や MacPorts などの UNIX パッケージ集を使って pTeX をインストールすることができます。pTeX のインストール方法については、以下のサイトを起点にして情報を収集して下さい。
 
--MacWiki
---http://macwiki.sourceforge.jp/cgi-bin/wiki.cgi
---http://macwiki.sourceforge.jp/cgi-bin/wiki.cgi?TeXShop
---Mac OS X上の学術系ツールやオープンソースソフトウェア情報を扱う Wiki サイトです。日本語の TeXShop 情報もこちらに集まっています。
+* MacWiki
+	* http://macwiki.sourceforge.jp/cgi-bin/wiki.cgi
+	* http://macwiki.sourceforge.jp/cgi-bin/wiki.cgi?TeXShop
+	* Mac OS X上の学術系ツールやオープンソースソフトウェア情報を扱う Wiki サイトです。日本語の TeXShop 情報もこちらに集まっています。
 
--TeXWiki
---http://oku.edu.mie-u.ac.jp/~okumura/texwiki/
---日本語 TeX 関連の情報を扱う総合 Wiki サイトです。上で紹介した書籍「美文書作成入門」の著者、奥村先生が管理なさっています。
+* TeXWiki
+	* http://oku.edu.mie-u.ac.jp/~okumura/texwiki/
+	* 日本語 TeX 関連の情報を扱う総合 Wiki サイトです。上で紹介した書籍「美文書作成入門」の著者、奥村先生が管理なさっています。
 
 
-pTeX + TeXShop で日本語TeX文書を作成する際の注意点について述べておかねばなりません。 TeXShop には「pdfTeX」 「TeX + Ghostscript」 「パーソナルスクリプト」の３種類のモードがあり、それぞれにタイプセットの方式が異なっています。日本語環境では「''TeX＋Ghostscript''」を使うとよいでしょう。 TeX ファイルは pTeX によって dvi ファイルに変換され、さらに dvipdfmx によって pdf ファイルに変換されます。 「TeX＋Ghostscript」モードで利用できる画像形式は、基本的には eps と ps ですが、 dvipdfmx 自体は pdf ・ jpg ・ png ・ mps を扱うことも可能です（ jpg ・ png ・ pdf 画像の扱いについては、ヘルプ項目「画像を入れる」を参照してください）。
+pTeX + TeXShop で日本語TeX文書を作成する際の注意点について述べておかねばなりません。 TeXShop には「pdfTeX」 「TeX + Ghostscript」 「パーソナルスクリプト」の３種類のモードがあり、それぞれにタイプセットの方式が異なっています。日本語環境では「**TeX＋Ghostscript**」を使うとよいでしょう。 TeX ファイルは pTeX によって dvi ファイルに変換され、さらに dvipdfmx によって pdf ファイルに変換されます。 「TeX＋Ghostscript」モードで利用できる画像形式は、基本的には eps と ps ですが、 dvipdfmx 自体は pdf ・ jpg ・ png ・ mps を扱うことも可能です（ jpg ・ png ・ pdf 画像の扱いについては、ヘルプ項目「画像を入れる」を参照してください）。
 
 「TeX + Ghostscript」が＋記号で結ばれていることに触れておくべきかもしれません──これはシェルスクリプトにより platex -> dvipdfmx という動作が実行されているにすぎないことを意味しています。つまり、たとえば目次の作成などのように複数回のタイプセットが必要な場合には、いくぶん無駄が生じる、ということです。こうした無駄を省きたいユーザは、 platex -> platex -> dvipdfmx というように動作するマクロ・スクリプトを利用することができます。マクロについて詳しく知りたい場合は「マクロ・ヘルプ」をお調べください。
 
@@ -62,6 +62,7 @@ pTeX + TeXShop で日本語TeX文書を作成する際の注意点について�
 以下にそれぞれの違いをまとめておきます。
 
 | タイプセットモード | pdfTeX | TeX + Ghostscript |
+|--------------------|--------|-------------------|
 | タイプセット | 高速 | やや遅い |
 | 日本語 | 不可 | 可 |
 | 画像形式 | pdf、jpg、png、mps (※) | eps、ps |
@@ -72,55 +73,55 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 これらのパッケージを使って pTeX をインストールした場合、次の「teTeX の入手とインストール」は読み飛ばしてかまいません── TeX はもう既にインストールされていますから。
 
-**Getting and Installing teTeX（ teTeX の入手とインストール）
+##Getting and Installing teTeX（ teTeX の入手とインストール）
 
 ［☆］The MacTeX working group of the TeX Users Group (TUG) has produced an Apple install package containing everything needed to run TeX on Mac OS X. The package installs in a couple of minutes with almost no user intervention. It contains a very complete version of Gerben Wierda's TeX redistribution, TeXShop, BibDesk, the Excalibur spell checker, and Gerben's i-Installer. For up to date links to the package, see
 
-【★】TeX ユーザグループ（TUG）内の ''MacTeX'' 作業グループにより、インストーラ形式のパッケージが作成されていますが、これには Mac OS X 上で TeX を実行するのに必要なものがすべて入っています。このパッケージにより、ほとんど何の手間もなく数分でインストールが済みます。収録されているのは── Gerben Wierda さんによる TeX のリディストリビューション（再配布物）の完全版、TeXShop、BibDesk、Excalibur（スペルチェッカー）、それと同じく Gerben さんの i-Installer です。このパッケージについての最新のリンクは下記を参照して下さい。
+【★】TeX ユーザグループ（TUG）内の **MacTeX** 作業グループにより、インストーラ形式のパッケージが作成されていますが、これには Mac OS X 上で TeX を実行するのに必要なものがすべて入っています。このパッケージにより、ほとんど何の手間もなく数分でインストールが済みます。収録されているのは── Gerben Wierda さんによる TeX のリディストリビューション（再配布物）の完全版、TeXShop、BibDesk、Excalibur（スペルチェッカー）、それと同じく Gerben さんの i-Installer です。このパッケージについての最新のリンクは下記を参照して下さい。
 
--www.uoregon.edu/~koch/texshop/obtaining.html
+* www.uoregon.edu/~koch/texshop/obtaining.html
 
 ［☆］You can also obtain Gerben Wierda's TeX redistribution separately (this is the distribution contained in the above package). The latest version of this distribution is compiled for both Intel and PowerPC processors and requires system 10.3 or higher. It is based on the latest teTeX for MacOSX and includes updated programs from the TeX User's Group's distribution TeXLive. To obtain these files and programs, go to Wierda's site
 
 【★】Gerben Wierda さんの TeX のリディストリビューション（再配布物）は単独でも入手することもできます──これは上述のパッケージに含まれているディストリビューションです。
 このディストリビューションの最新版はインテンルおよび PowerPC プロセッサ両用にコンパイルされており、MacOSX 10.3 以上が必要です。MacOSX 向けの最新の teTeX に基づいており、TeXLive（ TeX Users Group によるディストリビューション）が提供するアップデートされたプログラムも含まれています。これらのファイルやプログラムを手に入れるには、 Wierda さんのサイトを参照して下さい。
 
--http://www.rna.nl/tex.html
+* http://www.rna.nl/tex.html
 
 ［☆］and obtain i-Installer, the TeX installer. You'll find it in the downloadable package II2.dmg. Run the installer and install the following packages in the following order:
 
 【★】そして i-Installer （TeX のインストーラ）を取得してください。II2.dmgというダウンロード可能なパッケージに収められています。インストーラを実行し、以下のパッケージを順序通りインストールします：
 
--FreeType 2
--libwmf
--PNG Library
--Ghostscript 8
--ImageMagick
--FontForge
--Fondu Mac Font cli Tools
--TeX
+* FreeType 2
+* libwmf
+* PNG Library
+* Ghostscript 8
+* ImageMagick
+* FontForge
+* Fondu Mac Font cli Tools
+* TeX
 
 ［☆］The MacTeX package installs some other optional packages which you can also obtain with i-Installer:
 
-【★】''MacTeX'' パッケージにより、他にもいくつかのパッケージがオプションでインストールされますが、いずれも i-Installer を使って入手できるものです。
+【★】**MacTeX** パッケージにより、他にもいくつかのパッケージがオプションでインストールされますが、いずれも i-Installer を使って入手できるものです。
 
--CM-Super
--CB Greek
--MusixTeX
--ConTeXt updated
--XeTeX (this is in Jonathan Kew's directory)
+* CM-Super
+* CB Greek
+* MusixTeX
+* ConTeXt updated
+* XeTeX (this is in Jonathan Kew's directory)
 
 ［☆］More detailed installation instructions can be found on Wierda's site, and on the TeXShop web site listed later.
 
 【★】さらに詳しいインストールについての解説は Wierda さんのサイトにありますが、 TeXShop のウェブサイトにも掲載しました。
 
-**Getting and Installing TeXShop （ TeXShop の入手とインストール）
+##Getting and Installing TeXShop （ TeXShop の入手とインストール）
 
 ［☆］Log onto the web site
 
 【★】ウェブサイトへログオンします──
 
--http://www.uoregon.edu/~koch/texshop/texshop.html
+* http://www.uoregon.edu/~koch/texshop/texshop.html
 
 ［☆］and click the TeXShop link to download the file TeXShop.dmg. Double click on this file; a folder will appear containing TeXShop and other files which can be read or discarded. Drag TeXShop to the Applications folder. If you intend to use it often, drag its icon to the Dock.
 
@@ -130,7 +131,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】TeXShop には pdfsync という機能があります：プレビューウインドウ上の一点をクリックすると、その箇所に応じてソースウインドウをアクティブにするとともにソースコードの相当する行を選択します。この機能を使うには 「pdfsync.sty」 「pdfsync.tex」 「pdfsync4context.tex」 といったファイルを teTeX にインストールしておく必要があります。 TeXShop のディストリビューション内にあるファイルを ~/Library/texmf/tex/latex ・ ~/Library/texmf/tex/plain および ~/Library/texmf/tex/context にそれぞれドラッグしてください。 ~/Library はホーム・ディレクトリのライブラリ・フォルダのことです。 texmf ・ tex ・ latex ・ plain ・ context といったフォルダを作らねばならないかもしれません。
 
---補足：この機能に関しては、 「command＋クリック」によりプレビューとソース間で相互に照応できますが、 pdflatex でタイプセットする必要があり、 「TeX＋ghostscript」では使えません。
+* 補足：この機能に関しては、 「command＋クリック」によりプレビューとソース間で相互に照応できますが、 pdflatex でタイプセットする必要があり、 「TeX＋ghostscript」では使えません。
 
 ［☆］TeXShop 1.35 came with additional applescripts by Will Robertson and Claus Gerhardt. You will have these automatically if you installed a later version of TeXShop for the first time. But if you upgraded from a version earlier than 1.35, you will not automatically see those new scripts.
 
@@ -148,7 +149,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】TeXShop 1.35には Will Robertson による新しいテンプレート集が付属していました。 このテンプレートは自動ではインストールされません。 ~/Library/TeXShop 内のテンプレート・フォルダを丸ごとデスクトップに移動させることで手に入れます。次回 TeXShop を起動した際に、最新のテンプレートを含んだテンプレート・フォルダが作り直されます。その後、自分で編集した古いテンプレートを、デスクトップに置いたフォルダから新しく作られたフォルダ ~/Library/TeXShop/Templates へ移します。
 
-**Typesetting Documents（ドキュメントをタイプセットする）
+##Typesetting Documents（ドキュメントをタイプセットする）
 
 ［☆］To use TeXShop, type your LaTeX input in the editing window it provides. Then push the "Typeset" button at the top of the window. The input will be saved and pdflatex will run. A second window will open displaying messages from tex. If there are errors, pdflatex will halt; type "return" to skip the errors one by one, or one of the standard TeX inputs to quit, run continuously, etc. After the document has been typeset, a new window will appear showing the resulting pdf file. You can switch between the two windows by typing command-1.
 
@@ -220,7 +221,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】ソースウインドウとプレビューウインドウ間を行き来するには、⌘キーを押しながら語句をクリックします。ソースウインドウ内の語句をクリックした場合は、プレビューウインドウの方がしかるべき位置までスクロールし、組版済みの語句に赤で丸印を付けます。プレビューウインドウ内の語句をクリックしたのであれば、ソースウインドウを開き（まだ開かれていなければですが）、適切な位置までスクロールした上で、ソース中の語句を黄色でハイライト表示します。
 
-**Alternate Typesetting Mode（もうひとつのタイプセット方式）
+##Alternate Typesetting Mode（もうひとつのタイプセット方式）
 
 ［☆］There is another way to typeset with TeXShop; in this alternate mode, eps illustrations can be input directly without conversion. To use the alternate method, choose "TeX and Ghostscript" in the Typeset menu. Then TeXShop will typeset by calling tex or latex to produce a ".dvi" file, calling dvips to convert it to a postscript file, and calling ps2pdf to convert the postscript file to pdf. The method chosen in the typeset menu will only affect the topmost file; other documents will continue to be typeset with pdftex or pdflatex. The primary method used when a document is first opened can be selected in the preference dialog.
 
@@ -234,7 +235,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】環境設定における選択の如何によらず、 ある文書のタイプセット方式を常に固定する方法があります。 ソースファイルの冒頭20行以内のうちの１行が %!TEX TS-program = tex となっていれば、 TeX＋Ghostscript が使われます。 冒頭20行以内のうちの１行が %!TEX TS-program = latex となっていれば、 LaTeX＋Ghostscript となります。 その１行が %!TEX TS-program = pdftex もしくは %!TEX TS-program = pdflatex であれば、 pdftex もしくは pdflatex が使われます。 そしてもし冒頭20行以内に、 %!TEX TS-program = personaltex ないしは %!TEX TS-program = personallatex という１行があれば、 環境設定ダイアログでの設定にしたがってパーソナルスクリプトが用いられます。
 
-**Checking Spelling（スペルをチェックする）
+##Checking Spelling（スペルをチェックする）
 
 ［☆］Cocoa programs automatically inherit spell checking technology by Apple. The spell checker in Mac OS X 10.4 and higher does a better job dealing with LaTeX commands, but the Apple spell checker does not understand LaTeX commands and marks many of them as misspelled. However, other spelling services can be added to the Apple technology; they then become available in all Cocoa programs.
 
@@ -248,15 +249,15 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】Aspell は Unix マシン用に Kevin Adkinson さんが作成した「より賢い Ispell」です。それが Anton Leuski さんによって Mac OS X に移植され、スペルサービス化されました。この新しいスペルチェッカーは LaTeX をサポートしています。これを入手するには以下のサイトを訪れます──
 
--http://cocoaspell.leuski.net/
+* http://cocoaspell.leuski.net/
 
 ［☆］An alternate LaTeX spell checker named Excalibur is often used. This spell checker was written by Rick Zaccone; it can open TeXShop files. To obtain it, go to
 
 【★】他には、Rick Zaccone さんの Excalibur という LaTeX スペルチェッカーがよく使われています。このスペルチェッカーは TeXShop ファイルを開くことができます。入手するには、以下のサイトを訪れます──
 
--http://www.eg.bucknell.edu/~excalibr/excalibur.html
+* http://www.eg.bucknell.edu/~excalibr/excalibur.html
 
-**Latex Panel（ LaTeX パネル）
+##Latex Panel（ LaTeX パネル）
 
 ［☆］Under the Windows menu, there is an item named "Latex Panel..." Choosing this item will open a panel containing a large number of mathematical symbols, Greek letters, international characters, and typesetting environments. Clicking on a symbol will insert the corresponding text into your LaTeX source file. This wonderful panel is the work of Geoffroy Lenglin, who can be reached at geoffroy.lenglin@m4x.org.
 
@@ -284,7 +285,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】ユーザは completion.plist を編集することで最大16個までの項目を LaTeX パネルに付け加えることができます。これらは LaTeX パネルの「カスタム」というサブパネルに表示されます。項目追加に関しての詳細は completion.plist 内のコメントを参照してください。
 
-**Matrix Panel（行列パネル）
+##Matrix Panel（行列パネル）
 
 ［☆］The Windows menu contains an item "Matrix Panel...". Choosing this item will open a panel allowing easy creation of matrices. Only a small space is provided for each matrix entry, but larger items can be edited elsewhere and pasted into the matrix. This wonderful panel is the work of Jonas Zimmermann, who can be reached at zimmerleut@gmx.de.
 
@@ -300,7 +301,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 	defaults write TeXShop matrixsize 12
 
-**Macros（マクロ）
+##Macros（マクロ）
 
 ［☆］There is an alternate mechanism to insert commonly used TeX commands in your source document. Find the command in the Macro menu or the Macro button on the toolbar and choose it. In addition, some macros run AppleScript commands. A Macro Editor is provided which allows you to examine current macros, modify them, and add your own macros. For details, see the "About Macros" document in the Help menu. The TeXShop Macro commands and the Macro Editor were created by Mitsuhiro Shishikura. Default macros were created by Mitsuhiro Shishikura and Hirokazu Ogawa.
 
@@ -310,7 +311,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】マクロは ~/Library/TeXShop/Macros/Macros.plist というファイルに格納されています。これはごく普通のテキストファイルですから、コピーしたり他の人に送ったりできます ； したがって、ユーザの作成したマクロを配布することが可能です。マクロエディタには plist ファイルを読み込んでマクロを追加するためのコマンドがあります。
 
-**Toolbar and AppleScript（ツールバーと AppleScript ）
+##Toolbar and AppleScript（ツールバーと AppleScript ）
 
 ［☆］The selection and location of tools at the top of the TeX Source and PDF Preview windows can be modified using the menu item "Customize Toolbar." This toolbar support is entirely the work of Anton Leuski. Thanks!
 
@@ -320,7 +321,7 @@ TeXShop のインストールそのものは、難しいことではありませ
 
 【★】TeXShop は AppleScript をサポートしています。これも同じく Anton Leuski さんのおかげです。
 
-**Including Graphics（画像を入れる）
+##Including Graphics（画像を入れる）
 
 「TeX＋Ghostscript」モードで jpg ・ png および pdf 形式の画像を挿入するには、 dvipdfmx を使用します。プリアンブルに次の１行を追加しておいてください。
 
@@ -385,26 +386,26 @@ BoundingBox の情報をここからコピーして使用することができ�
 
 【★】もし以前のバージョンの TeXShop からアップグレードしており、タイプセット時に eps および tif ファイルの自動変換をお望みなら、次の点を確認してください──
 
--［☆］a. You have installed Ghostscript 8, Freetype 2, wmf and iconv conversion support, and ImageMagick with Gerben Wierda's installer
--【★】a. Gerben Wierda のインストーラで Ghostscript 8 ・ Freetype 2 ・ wmf ・ iconv conversion support それから ImageMagick をインストールしてある。
+* ［☆］a. You have installed Ghostscript 8, Freetype 2, wmf and iconv conversion support, and ImageMagick with Gerben Wierda's installer
+* 【★】a. Gerben Wierda のインストーラで Ghostscript 8 ・ Freetype 2 ・ wmf ・ iconv conversion support それから ImageMagick をインストールしてある。
 
--［☆］b. The pdflatex program preference is "pdflatex --shell-escape"
--【★】b. pdflatex プログラムの設定が「pdflatex --shell-escape」になっている。
+* ［☆］b. The pdflatex program preference is "pdflatex --shell-escape"
+* 【★】b. pdflatex プログラムの設定が「pdflatex --shell-escape」になっている。
 
--［☆］c. The Latex header contains the following lines
--【★】c. LaTeX ヘッダに以下の行が含まれている──
+* ［☆］c. The Latex header contains the following lines
+* 【★】c. LaTeX ヘッダに以下の行が含まれている──
 
 	\usepackage{graphicx}
 	\usepackage{epstopdf}
 	\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
 
-**Printing（印刷）
+##Printing（印刷）
 
 ［☆］To print a TeX output file, select the "Print" menu item. To print TeX source, select the "Print Source" menu item.
 
 【★】TeX による出力結果を印刷するには、メニュー項目の「プリント...」を選びます。 TeX ソースを印刷するには「ソースをプリント...」を選択してください。
 
-**Setting Preferences（環境設定）
+##Setting Preferences（環境設定）
 
 ［☆］Several items can be changed using the Preference menu: the default font for the input window, the default magnification for the output window, and the default position of these windows when they first appear. You can configure the console so it always appears when typesetting, or only appears when there is an error. You can configure the source window so an initial click in the window only activates the window, or this initial click also sets the text insertion point.
 
@@ -471,6 +472,7 @@ BoundingBox の情報をここからコピーして使用することができ�
 TeXShop バージョン 1.35 では、下のような設定プロファイルが搭載されており、日本語 pTeX ディストリビューションでそのまま使うことができます。
 
 |設定箇所 | Shift JIS | EUC |
+|---------|-----------|-----|
 |書類 > エンコーディング| Japanese (Shift JIS ＼) | Japanese (EUC)  |
 |プレビュー > 見開きページ| 左からスタート（両面） |== |
 |内部設定 > パス設定 > (pdf)TeX| /usr/local/bin |== |
@@ -481,15 +483,15 @@ TeXShop バージョン 1.35 では、下のような設定プロファイルが
 
 ※：これらの設定は 1.34 までのものから変更されていますのでご注意ください。
 
-**日本語エンコーディングと \ ¥ 文字の扱い
+##日本語エンコーディングと \ ¥ 文字の扱い
 
 TeXShop は下の５種類の日本語エンコーディングに対応しています。これらは環境設定パネルの「書類 > エンコーディング」で設定できます。
 
--Japanese (JIS)
--Japanese (EUC)
--Japanese (ShiftJIS \)
--Japanese (ShiftJIS ¥)
--Japanese (ShiftJIS X0213)
+* Japanese (JIS)
+* Japanese (EUC)
+* Japanese (ShiftJIS \)
+* Japanese (ShiftJIS ¥)
+* Japanese (ShiftJIS X0213)
 
 このうち「Japanese (ShiftJIS ¥)」と「Japanese (ShiftJIS X0213)」では TeX 記号が ¥ で表示されます。
 一方、他のエンコーディングでは、TeX 記号が \ で表示されます。
@@ -510,6 +512,7 @@ TeX 記号の \ を入力するとき、手元に \ キーがなければ
 お使いの環境にあわせて調整して下さい。
 
 | エンコーディング                     | メニュー項目名                 | デフォルト |
+|-------------------------------------|---------------------------------|--------------|
 | Japanese (ShiftJIS \ EUC JIS)        | クリップボードで \ を ¥ に変換 | ON  |
 | Japanese (ShiftJIS ¥ ShiftJIS X0213) | クリップボードで ¥ を \ に変換 | OFF |
 
@@ -519,4 +522,3 @@ TeX 記号の \ を入力するとき、手元に \ キーがなければ
 
 
 ----
-関連ページ　[[TeXShop]]
