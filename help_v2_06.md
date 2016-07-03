@@ -13,6 +13,7 @@ Version 2.10b
 【★】**TeXShop は GPL 公有使用許諾のもとに提供されます。**
 
 ［☆］**Coordination by:**
+
 【★】**コーディネーター：**
 
 * Richard Koch
@@ -20,6 +21,7 @@ Version 2.10b
 * Gerben Wierda
 
 ［☆］**Code by:**
+
 【★】**コード開発：**
 
 * Richard Koch
@@ -58,6 +60,7 @@ Version 2.10b
 * iNOUE Koich! （井上浩一）
 
 ［☆］**Localization by:**
+
 【★】**ローカライズ：**
 
 * Maarten Sneep
@@ -77,6 +80,7 @@ Version 2.10b
 * Juan Luis Varona Malumbres
 
 ［☆］**Contact Information:**
+
 【★】**連絡先：**
 
 * Richard Koch
@@ -1076,3 +1080,4 @@ Version 2.10b
 * 【★】TeXShop がアクティブでないときにも環境設定ウインドウが隠れなくなりました。
 
 ----
+[もくじ](README.md)
