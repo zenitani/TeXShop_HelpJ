@@ -1,0 +1,646 @@
+[[TeXShop]] の日本語ヘルプファイルのアーカイブ (v2-2) です。
+
+作業当時の日英対訳テキストをアップしています。
+
+----
+'''Version 2.10b'''
+----
+
+*Basic Help（基本的なヘルプ）（その２）
+
+**Modifying the Templates Menu（テンプレート・メニューを変更する）
+
+［☆］When TeXShop runs for the first time, it creates a folder
+
+【★】TeXShop を初めて起動すると、次のようなフォルダが作られます──
+
+	~/Library/TeXShop/Templates
+
+［☆］and places the files Graphics.tex and LatexTemplate.tex (and a folder named "More" of additional files) in this folder. The names of these files are shown under the Templates pull down menu at the top of the input window. Choosing one of these items inserts the contents of the template file at the current cursor position in the source. The Graphics and LaTeX templates were recently revised by Will Robertson to follow modern TeX practices; Robertson provided the templates in the More subdirectory.
+
+【★】そしてこのフォルダ内には Graphics.tex ・ LatexTemplate.tex （それと追加ファイル用の「More」という名称のフォルダ）が置かれます。これらのファイルの名前は入力ウインドウ上部にあるプルダウンメニュー「テンプレート」で見られます。これらの項目の１つを選ぶと、ソース内のカーソル位置にテンプレート・ファイルの内容が挿入されます。 Graphics と LaTeX テンプレートは Will Robertson により新しく作り直され、最近の TeX の慣習に従うようになりました ； Robertson はサブフォルダ「More」内のテンプレートも提供してくれています。
+
+［☆］Template files are standard TeX files which can be opened and edited by TeXShop. Additional TeX files can be inserted into the Templates folder; they will also appear under the Templates pull down menu provided their names end with the extension ".tex". The original template files can be removed if desired.
+
+【★】テンプレート・ファイルは、 TeXShop で開いたり編集したりできる標準的な TeX ファイルです。追加の TeX ファイルを Templates フォルダに入れることができます ； それらはプルダウンメニュー「テンプレート」に現われますが、名前は拡張子「.tex」で終わるようにしておきます。もし邪魔なら、もともとのテンプレート・ファイルは捨ててもかまいません。
+
+［☆］To create a hierarchical structure in the Templates menu, place some of the template files in subfolders of ~/Library/TeXShop/Templates.
+
+【★】テンプレート・メニューで階層構造を作るには ~/Library/TeXShop/Templates のサブフォルダにテンプレート・ファイルを置きます。
+
+［☆］To restore the original template files, delete the Templates folder and run TeXShop again. It will recreate the folder and restore its original contents.
+
+【★】オリジナルのテンプレート・ファイルを復元するには、 Templates フォルダを削除し TeXShop を再起動します。フォルダが作り直され、オリジナルの内容が復元されます。
+
+［☆］When users upgrade TeXShop, the template is not upgraded because the user may have modified it. If an upgrade changes default templates, it is a good idea to move the ~/Library/TeXShop/Templates folder to the desktop, let TeXShop recreate the folder from scratch, and then repopulate the folder with additional templates from the old Templates folder.
+
+【★】ユーザが修正を加えているかもしれないので、 TeXShop をアップグレードした際も、このテンプレート・フォルダは更新されません。もしアップグレードによりデフォルトのテンプレートを変えるのであれば、 ~/Library/TeXShop/Templates フォルダをデスクトップに移動し、 TeXShop にゼロからフォルダを作り直させ、そのうえで古いほうのテンプレート・フォルダから追加のテンプレートを移し替えるのがよいでしょう。
+
+［☆］The commands \usepackage{amssymb} and \usepackage{graphicx} mentioned earlier are included in recent copies of the LatexTemplate, but not in copies from very old versions of TeXShop.
+
+【★】先に触れた \usepackage{amssymb} と \usepackage{graphicx} というコマンドが、最近の LatexTemplate には含まれていますが、だいぶ以前のバージョンの TeXShop には入っていません。
+
+**Editing Tricks（編集上のコツ）
+
+［☆］Double clicking on a bracket of the form (, {, [, ], }, or ) will select everything between that bracket and its matching bracket. Double clicking on a bracket with the option key down will select the bracket alone.
+
+【★】(, {, [, ], }, ) といった括弧類をダブルクリックすると、対応する括弧とその間の全てのテキストが選択されます。option キーを押しながら括弧をダブルクリックすると、その括弧だけを選択することができます。
+
+［☆］TeXShop has a new Find panel by Isao Sonobe. This panel supports regular expressions. Users can switch between this panel and the original one in Preferences. The Find panel depends on OgreKit, a Cocoa framework for handling regular expressions by Sonobe. See
+
+【★】TeXShop には園部勲さんによる新しい検索パネルがあります。このパネルは正規表現をサポートしています。この検索パネルと従来の Apple 標準のものとは環境設定で切り替えることができます。新しい検索パネルは園部さんの OgreKit ──正規表現を扱うための Cocoa フレームワーク、に依存しています。以下をご覧ください──
+
+http://www-gauge.scphys.kyoto-u.ac.jp/~sonobe/OgreKit
+
+［☆］OgreKit is distributed using a slightly modified version of the BSD license; this license can be found in the TeXShop source code distribution. OgreKit requires Panther, so the new panel will only appear on machines running system 10.3 or later.
+
+【★】OgreKit は BSD ライセンスをやや修正したライセンスに基づいて配布されています ； このライセンスは TeXShop のソースコード・ディストリビューション内にあります。 OgreKit には Panther が必要ですので、新しい検索パネルは10.3以降のシステムでのみ表示されます。
+
+［☆］There are many nice features of this new Find panel. OgreKit modifies the "Find" submenu of the TeXShop edit menu, replacing it with a more extensive menu. The Find panel presents buttons controlling how it will find words; the settings of these buttons will be remembered from session to session. Adjust them until Find words as expected and then relax.
+
+【★】新しい検索パネルには素晴らしい機能がたくさんあります。OgreKit は TeXShop の「編集」メニューの「検索」サブメニューを変更し、より拡張されたメニューに置き換えます。検索パネルにはどのように検索を行なうかを制御するボタン類があります ； これらのボタンの設定は次回以降にも引き継がれます。思ったとおりに語句を見つけ出せるようになるまで調整したら、後はリラックスしてください。
+
+［☆］Groups of lines can be commented out using a menu command, and later activated again. Groups of lines can be indented with a menu command, and later moved back. If a line starts with a series of tabs or spaces, new lines will start at the same position until the behavior is cancelled by backspacing. This behavior was added to TeXShop by Nicolás Ojeda Bär in Argentina, who can be reached at lojedaortiz@interlink.com.ar. Thanks!
+
+【★】メニュー・コマンドを使うことで、複数行をまとめてコメントアウトできますし、後でまた有効にすることもできます。複数行をまとめて、メニュー・コマンドで字下げすることもできれば、後で戻すこともできます。ひとつながりのタブやスペースで行が始まっている場合、バックスペースで取り消すまでは、字下げした位置から新しい行が始まります。この動作はアルゼンチンの Nicolás Ojeda Bär （ lojedaortiz@interlink.com.ar ）さんによって TeXShop に付け加えられました。ありがとう！
+
+［☆］The source window can be split in two pieces using the split tool at the top of the window. When it is split, two views of the same source are shown. You can type in either piece and your changes will immediately appear in the other as well. Thus you can modify one section of source while reading a second part of the source.
+
+【★】ソースウインドウは、ウインドウ上部にあるスプリット・ツールで２つに分割できます。分割すると、同じソース内の２つの部分が表示されます。どちらにでも入力できますし、変更箇所はもう一方にも即座に反映されます。なのでソースの一部を参照しながら別の部分を修正することができます。
+
+［☆］TeXShop can be instructed to create a backup file every time a file is saved or typeset. This is set using a hidden preference. To create backup files, open Terminal and type the following command:
+
+【★】ファイルを保存したりタイプセットしたりするときに、毎回バックアップを取ることもできます。これは隠された設定を使って行ないます。バックアップ・ファイルを取るには、 Terminal を開いて次のコマンドを打ち込んでください：
+
+	defaults write TeXShop SaveBackup YES
+
+［☆］Change YES to NO to stop creating backups.
+
+【★】バックアップを取るのをやめるには YES を NO に変えます。
+
+［☆］A Statistics panel lists the number of words, line, and characters in a document. Internally, this panel calls
+
+【★】「文書情報」は文書内の単語数、行数および文字数を表示します。このパネルは内部で次のようなコールを行ないます──
+
+	detex myfile | wc
+
+［☆］The detex command removes tex commands, but the word count is still only approximate. Input and include files are counted automatically by this command.
+
+【★】detex コマンドが TeX のコマンドを取り除きますが、ワード・カウントはまだ概算のものでしかありません。 input および include されたファイルも、このコマンドにより自動的に勘定されます。
+
+［☆］File icons can be dragged and dropped onto the source text. If the file is a tex file, an \input command will be added with a relative path to the file. If the file is a graphic file, an \includegraphics command will be added instead. The following graphic types are recognized: pdf, jpg, jpeg, tif, tiff, eps, ps.
+
+【★】ファイル・アイコンをソース・テキストにドラッグ＆ドロップすることができます。それが tex ファイルの場合には、ファイルへの相対パスで \input コマンドが付け加えられます。グラフィック・ファイルであれば、代わりに \includegraphics コマンドが付加されます。次のグラフィック・タイプが認識されます： pdf ・ jpg ・ jpeg ・ tif ・ tiff ・ eps ・ ps
+
+--補足：LaTeX Equation Editorで作った数式pdfファイルの場合は、ファイルの中に埋め込まれている元のTeXコードを取り出してくれます。
+
+［☆］Dropping a cls file produces \documentclass and a file reference, dropping a sty file produces \usepackage, dropping a bib file produces \bibliographystyle, and dropping other text files produces \input.
+
+【★】clsファイルをドロップすると \documentclass が記述されてファイルの参照が行なわれますし、 styファイルをドロップすれば \usepackage が、 bibファイルをドロップすれば \bibliographystyle、その他の textファイルであれば \input となります。
+
+［☆］Drag and drop resolves aliases. For example, if a graphic file is really an alias, the file can be drag-and-dropped to the source and this source will typeset fine. TeX itself cannot resolve aliases, although it can resolve symbolic links. So if the name of the graphic alias is typed directly into the source, it will cause an error during typesetting.
+
+【★】ドラッグ＆ドロップはエイリアスを解決します。たとえば、グラフィック・ファイルが実際にはエイリアスだった場合でも、それをソースにドラッグ＆ドロップすることができますし、このソースは問題なくタイプセットできます。 TeX それ自体はエイリアスを解決できません──シンボリック・リンクを解決することはできますが。なのでグラフィックのエイリアスの名前をソースにじかに入力した場合には、タイプセット時にエラーの原因となります。
+
+［☆］The behavior of drag and drop is user customizable. Customization is done with the Macro menu. Insert a new submenu titled "Drag & Drop". Inside this submenu place items named with the extension whose behavior you wish to customize, and place the code that should be inserted in the body of this item. For instance, if the item is .pdf, the code might be \includegraphics[#INS#]{%r}. In these inclusions, the following abbreviations may be used:
+
+	%F full path of an dropped file
+	%f dropped filename
+	%r relative path of the dropped file
+	%n filename without extension
+	%e extension.
+
+【★】ドラッグ＆ドロップの動作はユーザによるカスタマイズが可能です。カスタマイズはマクロメニューで行なえます。 「Drag & Drop」という項目名で新しいサブメニューを加えてください。このサブメニュー内に、動作をカスタマイズしたい拡張子名を付けた項目を設置し、この項目の内容の部分にコードを書き込みます。たとえば、.pdf という項目では、コードは \includegraphics[#INS#]{%r} になるかと思われます。こうした取り込み用に、次のような短縮形を利用してもらえます：
+
+	%F ドロップされたファイル名（絶対パス）
+	%f ドロップされたファイル名
+	%r ドロップされたファイル名（相対パス）
+	%n 拡張子なしのファイル名
+	%e 拡張子
+
+［☆］If an extension is not mentioned in the Macro Editor, then it is handled in the default manner mentioned earlier. Thus for most people, no macro "Drag & Drop" submenu is needed.
+
+【★】もし拡張子がマクロエディタに特記されていなければ、前述したデフォルトの方法で処理されます。なので、たいていの人にとっては、 「Drag & Drop」というマクロ・サブメニューは必要ではありません。
+
+**Auto Completion（オートコンプリート）
+
+［☆］Greg Landweber has added auto completion to the TeXShop editor. Typing a double quote will produce a pair of double quotes with the cursor positioned between them. Typing the ^ symbol will produce ^{ } with the cursor positioned between the brackets. Etc. Thirty-nine such completions are currently available.
+
+【★】Greg Landweber さんは TeXShop のエディタにオートコンプリート（自動補完）機能を付け加えました。ダブルクオートをタイプすると、カーソルを間に挟んだ１対のダブルクオートが入力されます。^ という記号をタイプすると、括弧の間にカーソルを挟んだ状態で ^{ } が入ります。などなど。こうした39個の補完が今のところ利用可能です。
+
+［☆］Auto completion can be turned off or on with a preference item. The default preference is off. To try auto completion, turn it on.
+
+【★】オートコンプリートは環境設定項目でオン・オフを切り替えられます。デフォルトの設定はオフになっています。オートコンプリートを試すにはオンにします。
+
+［☆］Auto completion is user configurable. To configure, open the file ~/Library/TeXShop/Keyboard/autocompletion.plist with TeXShop. Read the comments at the top, edit appropriately to redefine Landweber's choices or add your own, and save. Be sure to edit and save in UTF-8 format if you use Unicode characters.
+
+【★】オートコンプリートはユーザが設定可能です。設定するには、~/Library/TeXShop/Keyboard/autocompletion.plist というファイルを TeXShop で開きます。冒頭のコメントを読み、適切に編集して Landweber さんの選定したものを定義しなおしたり独自のものを付け加えたりして、保存します。 Unicode 文字を使用するのであれば、かならず UTF-8 形式で編集し保存するようにしてください。
+
+**Command Completion（コマンドの補完）
+
+［☆］The source editor supports command completion. Type the first few letters of a word and hit the escape key. The remaining letters will be entered. Hitting escape again will cycle through all possible completions.
+
+【★】ソースエディタはコマンドの補完をサポートしています。単語の最初の数文字を打ち込み、エスケープ・キーを押してください。残りの文字が入力されます。もう一度エスケープ・キーを押すと、すべての補完可能な候補をくりかえし表示します。
+
+［☆］Initially this will have limited usefulness because the completion dictionary is almost empty. To add a word to the dictionary, select the word and choose "Add Word" under the Format menu. Notice that this menu command has a key equivalent. To see and edit the entire dictionary, choose "Open Completion File" under the Format menu. Notice that the completion can be more complicated than just a single word, and the cursor can be placed correctly within this completion. Examine the samples provided in the default file for details.
+
+【★】初めのうちは、この補完機能はたいして便利でないかもしれません──というのも、補完辞書がほとんどカラッポだからです。辞書に単語を追加するには、単語を選択して「フォーマット」メニューの「コマンド補完」から「用語を追加」を選んで下さい。このメニュー・コマンドはキー操作もできます。辞書全体を見たり編集したりするには、「フォーマット」メニューの「コマンド補完」から「補完用語ファイルを開く...」を選びます。補完は１語以上の複雑なものでもかまいませんし、&del(補完したものの内側に)補完した文字列の途中にカーソルを配置することもできます。詳細についてはデフォルト・ファイルにあるサンプルを調べてみてください。
+
+［☆］This feature will be improved in later versions of TeXShop.
+
+【★】この機能は TeXShop の将来のバージョンで改良されるでしょう。
+
+**Sending Bug Report（バグ・レポートを送る）
+
+［☆］To file bug reports and suggest improvements, contact
+
+【★】バグ・レポートの提出や改善の提案は下記へ──
+
+-Richard Koch
+--Mathematics Department University of Oregon Eugene, Oregon 97403
+---koch@math.uoregon.edu
+
+-Dirk Olmes
+---dirk@xanthippe.ping.de
+
+［☆］But reports for teTeX/TeXLive should go to
+
+【★】ただし teTeX/TeXLive についての報告はこちらへ──
+
+-Gerben Wierda
+---Gerben_Wierda@rna.nl
+
+**Useful Web Sites（役に立つウェブ・サイト）
+
+-TeXShop Web Site（公式ページ）:
+--http://www.uoregon.edu/~koch/texshop/
+
+----
+
+日本語でのTeX利用に役立つページ
+
+-TeX Wiki
+--http://oku.edu.mie-u.ac.jp/~okumura/texwiki/
+
+-MacWiki - TeXShop 情報
+--http://macwiki.sourceforge.jp/cgi-bin/wiki.cgi?TeXShop
+
+-MacpTeXとその周辺
+--http://macptex.appi.keio.ac.jp/~uchiyama/macptex.html
+
+-アスキー日本語TeX（pTeX）
+--http://www.ascii.co.jp/pb/ptex/index.html
+
+----
+
+-teTeX/TeXLive Web Site:
+--http://www.rna.nl/tex.html
+
+-Gary Gray's MacOSX TeX/LaTeX Web Site:
+--http://www.esm.psu.edu/mac-tex/
+
+-Unicode Extensions to support TeXShop's UTF-8 Unicode file preference option:
+-TeXShop の UTF-8 Unicode ファイル環境設定オプションをサポートする Unicode 機能拡張：
+--http://www.ctan.org/tex-archive/macros/latex/contrib/supported/unicode/
+
+-ConTeXt Web Site:
+--http://www.pragma-ade.com/
+
+-MetaPost Web Site:
+--http://cm.bell-labs.com/who/hobby/MetaPost.html
+
+-Comprehensive TeX Archive:
+-TeX に関する包括的な保管場所（いわゆる CTAN シータン）：
+--http://www.ctan.org
+--http://www.ctan.org/tex-archive
+
+-TeX Users Group (TUG):
+--http://www.tug.org
+
+-XeTeX and XeLaTeX:
+--http://scripts.sil.org/xetex
+
+**License（使用許諾）
+
+［☆］TeXShop is provided under the GNU General Public License (GPL). This means that you are free to use, copy, and modify the program. If you give your modifications to others, the modifications must also be provided under the GPL.
+
+【★】TeXShop は GNU 一般公有使用許諾（ GPL ）の下で提供されます。これはプログラムを自由に使ったり、コピーしたり、改変したりできることを意味します。もしあなたが改変したものを他の人たちに提供するなら、同様に GPL の下で行なわねばなりません。
+
+［☆］The source code is available on the web site:
+
+【★】ソースコードは次のウェブサイトにあります：
+
+-http://darkwing.uoregon.edu/~koch/texshop/texshop.html
+
+*Advanced Help（上級向けのヘルプ）
+
+**Adding Personal Sty and Macro Files to teTeX（スタイルとマクロを teTeX に追加する）
+
+［☆］Users sometimes create additional sty, cls, bib, and tex files for common use in several different projects. These files will certainly be seen by tex and latex if they are placed in the same folder as the tex source file being typeset, but then multiple copies of the files must be kept on the computer.
+
+【★】ユーザはいくつかの異なるプロジェクトで共用するために追加の sty ・ cls ・ bib および tex などのファイルを作成することもあります。 tex のソース・ファイルをタイプセットするときに、それらのファイルが同一のフォルダ内にあれば、 TeX や LaTeX にはきちんと読み取ってもらえますが、ファイルの多重コピーをコンピュータ上に保持しなければなりません。
+
+［☆］It is possible to make these files visible to all teTeX projects, whether typeset from TeXShop or from the Terminal. To do so, create a subfolder of the Library folder in your home directory named texmf. Create subfolders named tex and bibtex. Within the tex folder, create a subfolder named latex. Store your personal files in these folders.
+
+【★】すべての teTeX プロジェクトに対してこれらのファイルを読み取り可能にすることができます──タイプセットを TeXShop から行なうにしろ、ターミナルから行なうにしろ。そうするためには、ホーム・ディレクトリ内のライブラリ・フォルダに texmf という名前でサブフォルダを作ります。そして tex と bibtex という名前でサブフォルダを作ります。 tex フォルダ内には latex という名前のサブフォルダも作ります。これらのフォルダに個人的なファイルをしまっておきます。
+
+［☆］Tex will find any file in ~/Library/texmf/tex or a subfolder of this directory. Latex will find any file in ~/Library/texmf/tex/latex or a subfolder of this directory, and bibtex and makeindex will find any file in ~/Library/texmf/bibtex and ~/Library/texmf/makeindex respectively, or a subfolder. It is not necessary to run texhash after adding files to these folders.
+
+【★】TeX は ~/Library/texmf/tex ないしはこのディレクトリ以下のサブフォルダ内にあるすべてのファイルを検知します。 LaTeX は ~/Library/texmf/tex/latex ないしはこのディレクトリ以下のサブフォルダ内にあるすべてのファイルを検知し、 BibTeX と MakeIndex はそれぞれ ~/Library/texmf/bibtex あるいは ~/Library/texmf/makeindex にあるすべてのファイルを検知するでしょう。これらのフォルダにファイルを追加した後で texhash を実行する必要はありません。
+
+［☆］On other Unix machines, tex is sometimes notified of the location of personal input files by setting the environment variables TEXINPUTS, BSTINPUTS, and BIBINPUTS. This is generally not necessary in Gerben Wierda's teTeX distribution, but it can be done in special circumstances. Mac OS X allows users to notify programs about environment variables by creating a file in their home directory named ~/.MacOSX/environment.plist. These environment variables get picked up by all user shells and all Carbon and Cocoa programs, so caution should be used when creating the file.
+
+【★】他の UNIX マシンにおいて、 TeX は個人的な入力ファイルの所在を環境変数（ TEXINPUTS ・ BSTINPUTS および BIBINPUTS ）の設定により知らされることもあります。これは Gerben Wierda の teTeX ディストリビューションでは通常は不要ですけれども、特別な状況ではそうすることもできます。 Mac OS X では ~/.MacOSX/environment.plist という名前のファイルをホーム・ディレクトリに作ることで、環境変数についてプログラムに知らせることをユーザに許可しています。これらの環境変数はすべてのユーザ・シェルおよびすべての Carbon と Cocoa プログラムに読み込まれます──ですから、このファイルを作るに際しては注意を払うべきです。
+
+［☆］Below is a sample environment.plist file sent me by Nathan Potter; thanks! For further details, consult http://developer.apple.com/qa/qa2001/qa1067.html.
+
+【★】下にあるのは Nathan Potter さんが送ってくれた environment.plist ファイルのサンプルです ； ありがとう！ さらなる詳細については、 http://developer.apple.com/qa/qa2001/qa1067.html でお調べください
+
+---サンプルコードは画像で紹介されています。TeXShop のヘルプメニューからご覧ください。
+
+**Additional Typesetting Engines（追加のタイプセット・エンジン）
+
+［☆］Recently, Jonathan Kew introduced XeTeX and XeLaTeX. These programs can use Macintosh fonts directly within a TeX document. XeTeX and XeLaTeX require unicode source and thus can deal with any unicode character; for example, with them you can type Arabic or Hebrew in the source document and later see Arabic or Hebrew in the output. TeXShop's editor will correctly input these characters from right to left. XeTeX is not part of the standard TeX distribution from Gerben Wierda, but it can be obtained using Wierda's i-Installer as an optional install directly from Jonathan Kew. For additional details, consult
+
+【★】最近、 Jonathan Kew さんが XeTeX と XeLaTeX を発表しました。これらのプログラムは、 TeX 文書内で Macintosh のフォントをじかに利用することができます。 XeTeX と XeLaTeX は unicode によるソースが必要になりますが、それゆえすべての unicode 文字を取り扱うことができます ； たとえば、アラビア語やヘブライ語をソースコードに打ち込んで、アラビア語やヘブライ語の出力として見ることができます。 TeXShop のエディタではこうした文字を右から左へきちんと入力できます。 XeTeX は Gerben Wierda さんの配布する標準的な TeX には含まれていませんが、 Wierda さんの i-Installer を使うことで、オプション・インストールとして Jonathan Kew さんのところから入手することができます。さらに詳しいことについては、以下でお調べください──
+
+-http://scripts.sil.org/xetex
+
+
+［☆］To understand how this works, here is a brief XeLaTeX source document, and the resulting output. The Arabic and Hebrew characters were obtained by accessing the International Panel in System Preferences, selecting the Input Menu tab, and checking Arabic and Hebrew; a small flag appeared on the menu bar and a user could switch keyboards by selecting an appropriate flag.
+
+【★】これがどのように動作するのかを理解できるような、簡単な XeLaTeX のソース文書と出力結果があります。アラビア語とヘブライ語の文字は「システム環境設定」の「言語環境」で「入力メニュー」タブを選び、 Arabic と Hebrew にチェックを入れます ； 小さな国旗がメニューバーに表示されるので、それを選択することでキーボード入力を切り替えられます。
+
+---（入力例と出力例の画像）
+
+［☆］TeXShop now supports XeTeX and XeLaTeX:
+
+【★】TeXShop では現在すでに XeTeX と XeLaTeX をサポートしています：
+
+-［☆］XeTeX and XeLaTeX are available in the pull-down typesetting menu on the source window
+-【★】XeTeX と XeLaTeX は、ソースウインドウにあるプルダウンメニュー「タイプセット」から利用可能です
+
+-［☆］A user can make XeTeX or XeLaTeX the default typesetting option in preferences
+-【★】環境設定で XeTeX または XeLaTeX をデフォルトのタイプセット・コマンドにできます
+
+-［☆］If one of the first twenty lines of the source has the form
+-【★】もしソースの冒頭20行以内に次の書式があれば──
+
+	%!TEX encoding = UTF-8 Unicode
+
+-［☆］then that source will be loaded and saved with UTF-8 Unicode encoding regardless of the default encoding setting in preferences
+-【★】そのソースは、環境設定でのデフォルトのエンコーディング方式に関わらず UTF-8 Unicode 形式で読み込まれ保存されます
+
+-［☆］If one of the first twenty lines of the source has the form
+-【★】もしソースの冒頭20行以内に次のいずれかの書式があれば──
+
+	%!TEX TS-program = xetex
+
+	%!TEX TS-program = xelatex
+
+-［☆］then the appropriate program will be used regardless of the typesetting option chosen in the menu
+-【★】メニューで選択したタイプセット・オプションに関わらず、特定のプログラムが用いられます
+
+［☆］These XeTeX features form a special case of a new general method for adding typesetting engines to TeXShop. There is now a folder in ~/Library/TeXShop named Engines; the files in this folder are shell scripts which call typesetting programs. When TeXShop first starts, it examines this folder and adds the script names of files it contains to the pull-down typesetting menu. Choosing one of these items and pushing the Typeset button calls the script. Users can write their own scripts and add them to the Engines folder. Each such script must have a name without spaces, and extension ".engine", and have the executable bit set.
+
+【★】こうした XeTeX の特徴は、 TeXShop にタイプセット・エンジンを追加する新しい一般的な方法の特例となっています。 ~/Library/TeXShop 内に「Engines」という名前のフォルダがあります ； このフォルダに入っているファイルは、タイプセット・プログラムを呼び出せるシェル・スクリプトです。 TeXShop を最初に起動すると、このフォルダを調べ、ファイルのスクリプト名を加え、プルダウンメニュー「タイプセット」に含めます。この中から１つを選んでタイプセット・ボタンを押せば、スクリプトが呼び出されます。ユーザは自分で独自のスクリプトを書き、それを「Engines」フォルダに追加することができます。各スクリプトは、スペースを含まない名前で、拡張子が「.engine」となっており、実行可能なビット・セットがなければなりません。
+
+［☆］Items in ~/Library/TeXShop/Engines can be chosen as the default typesetting method in TeXShop Preferences. Notice that when a method is listed in Preferences, its name is given without the extension.
+
+【★】~/Library/TeXShop/Engines 内にある項目は、デフォルトのタイプセット方式として、 TeXShop の環境設定で選択できます。環境設定に表示される際には、拡張子なしの名称となることに注意します。
+
+［☆］The default program can be set on one of the first twenty lines of the source code by writing a line like
+
+【★】ソースコードの冒頭20行以内の１行に次のように書くことでデフォルトのプログラムを設定できます──
+
+	%!TEX TS-program = xelatex
+
+
+［☆］The encoding used to open or save any file can be set by writing a line of the following form
+as one of the first twenty lines of a source document. Any supported encoding is allowed. To bypass this
+behavior, hold down the option key while opening a file.
+
+【★】任意のファイルを開いたり保存したりするのに用いるエンコーディング方式は、 以下のような書式をソース文書の冒頭20行以内に書き込むことで設定できます。 サポートされているエンコーディング方式のいずれでも可能です。この動作を回避するには、オプションキーを押しながらファイルを開きます。
+
+	%!TEX encoding = UTF-8 Unicode
+
+
+［☆］There must be one space after %!TEX and one space before the equals sign; the spaces in the name of the encoding must match the spaces in the name listed below. The name of the encoding is the internal name used by Mac OS X. Below is a list of allowed names:
+
+【★】%!TEX の後に１つ、等号記号の前に１つ、半角スペースを入れなければなりません ； エンコーディング名に含まれるスペースは、下記のリストにあるスペースと一致させてください。エンコーディング方式の名称は Mac OS X の内部で用いられているものです。以下が利用可能な名称のリストです：
+
+-MacOSRoman
+-IsoLatin
+-IsoLatin2
+-IsoLatin5
+-MacJapanese
+-DOSJapanese
+-SJIS_X0213
+-EUC_JP
+-JISJapanese
+-MacKorean
+-UTF-8 Unicode
+-Standard Unicode
+-Mac Cyrillic
+-DOS Cyrillic
+-DOS Russian
+-Windows Cyrillic
+-KOI8_R
+-Mac Chinese Traditional
+-Mac Chinese Simplified
+-DOS Chinese Traditional
+-DOS Chinese Simplified
+-GBK
+-GB 2312
+-GB 18030
+
+**Removing AUX Files（作業ファイルを削除する）
+
+［☆］When documents are typeset, auxiliary files are created with extensions .aux, .log, .bbl, etc. Occasionally these files can become corrupt and lead to unexplained typesetting errors. TeXShop has a menu command "Trash AUX Files" which will remove all such files so typesetting can proceed. There is a similarly named button on the Console window. If either of these items is activated, TeXShop will move to the trash all files in the current source directory with the same name as the source file and extension aux, blg, brf, ccs, ent, fff, glo, idx, idv, ilg, ind, ioa, lg, log, lot, mte, mlf, out, pdfsync, toc, ttt, wrm, xref, 4ct, or 4tc.
+
+【★】ドキュメントをタイプセットすると、 「.aux」 「.log」 「.bbl」などの拡張子が付いた補助的なファイルが生成されます。こうしたファイルはときどき、おかしくなったり、予期せぬタイプセット・エラーを招いたりすることがあります。 TeXShop には「作業ファイルを削除」というメニューコマンドがあり、こうしたファイルをすべて取り除けるので、ひきつづきタイプセットを行なうことができます。同様な名前のボタンがコンソールウインドウにもあります。このいずれかを実行すると、現在のソースがあるディレクトリ内にあり、ソースファイルと名前が同じで、拡張子が aux ・ blg ・ brf ・ ccs ・ ent ・ fff ・ glo ・ idx ・ idv ・ ilg ・ ind ・ ioa ・ lg ・ log ・ lot ・ mtc ・ mlf ・ out ・ pdfsync ・ toc ・ ttt ・ wrm ・ xref ・ 4ct ・ 4tc となっているファイルがすべてゴミ箱へと移動されます。
+
+［☆］Additional extensions can be added to this list. To add "dvi" to the list, activate the Terminal and type
+
+【★】このリストに拡張子を追加することもできます。 「dvi」を加えるには、ターミナルを実行し、以下のようにタイプします──
+
+	defaults write TeXShop OtherTrashExtensions -array-add "dvi"
+
+［☆］To remove all additions and return to the original default list, tppe
+
+【★】追加した分を取り除いて元々のデフォルトのリストに戻すには、次のようにタイプします──
+
+	defaults write TeXShop OtherTrashExtensions -array
+
+［☆］Sometimes more extensive cleanup is needed. For example, if a book is controlled by main.tex, and chapters are in subfolders accessed with commands like \include{chapter1/chapter1}, then typesetting the book will create main.aux, main.pdfsync, and main.log in the main folder, and chapter1.aux in the chapter1 folder.
+
+【★】時として、さらに徹底したクリーンナップが必要になることがあります。たとえば、 main.tex で「本」を管理しており、各章がサブフォルダ内にあって \include{chapter1/chapter1} のようなコマンドでアクセスしている場合、 「本」をタイプセットすると、メインのフォルダ内には main.aux ・ main.pdfsync ・ main.log が生成され、 chapter1 フォルダには chapter1.aux が生成されます。
+
+［☆］The required extensive cleanup can be done by holding down the option key while choosing "Trash AUX Files." In this case:
+
+【★】これに応じた徹底的なクリーンナップは、オプションキーを押しながら「作業ファイルを削除」を選択することで実行できます。これを行なうと：
+
+-［☆］"%!TEX root" and Root File information will be used to find the root document and its folder
+-【★】%!TEX root とルートファイルの情報が、ルート文書とそのフォルダを探し当てるのに使われます
+
+-［☆］All files with appropriate extensions in this folder or any subfolder will be moved to the trash, regardless of the name of the file
+-【★】このフォルダまたはいずれかのサブフォルダ内にあり、該当する拡張子の付いたファイルはすべて、ファイル名の如何によらずゴミ箱に移されます
+
+［☆］There is a way to make this behavior the default behavior for "Trash AUX Files" even if the option key is not down:
+
+【★】「作業ファイルを削除」の動作を、オプションキーを押すことなく上記のようにする方法もあります：
+
+	defaults write TeXShop AggressiveTrashAUX YES
+
+**Using an External Editor（外部エディタを使用する）
+
+［☆］TeXShop can be configured for an external editor in several ways. Some features below will be useful and others not depending on how your editor works. In the future, your editor may come with configuration instructions.
+
+【★】TeXShopではいくつかの方法で外部エディタを設定することができます。以下に示す方法は便利ですし、エディタの機能には依存しません。将来的には、環境設定でエディタを指定するようになるかもしれません。
+
+［☆］There is a menu item named "Open for Preview..." When this item is chosen, you will be asked to select a .tex source file. But only the associated pdf preview window opens. If the source has not yet been typeset or if the pdf is out of date, TeXShop will typeset the file as it is opened. You can open your source file in any editor. When it is time to typeset, save the changes in your editor, switch to the preview window, and typeset. In this mode, TeXShop never opens or modifies the source file. It simply passes this file to the Unix TeX or LaTeX process.
+
+【★】「プレビューを開く...」というメニュー項目があります。この項目を選ぶと、拡張子が .tex のソースファイルを選択するように言われます。ですが開かれるのは、関連づけの行なわれた pdf プレビューウインドウのみです。ソースがまだタイプセットされていなかったり、 pdf が古くなっていた場合、ファイルを開くとともに TeXShop がタイプセットを行ないます。ソースファイルはどのエディタでも開くことができます。タイプセットの準備が整ったら、変更箇所をエディタで保存し、プレビューウインドウに切り替えてタイプセットします。このやり方の場合、 TeXShop はソースファイルを開かず、また修正も行ないません。ただ単にファイルを UNIX の TeX もしくは LaTeX プロセスに渡すだけです。
+
+［☆］The preview window can be configured to contain a typesetting button. If such a button is not there, use "Customize Toolbar..." in the Windows menu to add one.
+
+【★】プレビューウインドウにはタイプセット・ボタンを配置することができます。もしそうしたボタンが見あたらない場合は、ウインドウ・メニューの「ツールバーをカスタマイズ...」を使ってボタンを付け加えてください。
+
+［☆］For users who prefer external editors most of the time, there is a preference item called "Configure for External Editor." When this preference is chosen, the "Open" and "Open Recent..." menus open tex source files in the above manner for editing with an external editor. Moreover, the "Open for Preview..." menu becomes "Open for Editing..." and opens the source file in TeXShop's internal editor for those rare occasions when the internal editor is desired. The "Open" and "Open Recent..." menus can also open jpg, tiff, ps, pdf, dvi, log, and other files; selecting the new preference does not change this behavior.
+
+【★】ほとんど常に外部エディタを使いたいユーザーのために、環境設定には「外部エディタでソースを編集」という項目があります。この設定が選択されていると、 「開く...」と「最近使った書類」メニューでは、 TeX ソースファイルを外部エディタで編集するために、上述の方法で開きます。さらに「プレビューを開く...」メニューは「開いて編集する...」と変わり、 TeXShop の内蔵エディタでソースファイルを開くようになりますが、これはごくまれに内蔵エディタを使いたい場合のためです。 「開く...」と「最近使った書類」メニューではまた、 jpg ・ tiff ・ ps ・ pdf ・ dvi ・ log およびその他のファイルを開くこともできます ； この動作については、新しい環境設定にした場合でも変わりません。
+
+［☆］Some editors are able to call Unix typesetting commands directly. A new preference item, "Automatic Preview Update", has been added to improve your experience with these editors. When this item is active and a .tex file is opened using "Open for Preview", the pdf preview display automatically updates whenever the pdf file is rewritten. Thus you can typeset with an external editor and the preview window will automatically show changes. The preference also applies to .pdf files opened in TeXShop, and if TeXShop is configured to use an external editor, the preference applies to .tex files opened with "Open".
+
+【★】UNIX のタイプセット・コマンドを直接呼び出すことのできるエディタもあります。新しい設定項目「プレビューの自動更新」は、こうしたエディタでの作業を改善するために付け加えられました。この項目が選択されており、 「プレビューを開く...」を使って .texファイルを開いた場合には、 pdf が書き改められたときにはいつでも、 pdf プレビューワの画面が更新されます。なので、外部エディタからのタイプセットが可能になり、プレビューウインドウは自動的に変更を表示します。この環境設定は、 TeXShop で開いた .pdfファイルについても同様に適用されますし、 TeXShop が外部エディタを利用するように設定されていれば、 「開く...」を使って開いた .texファイルについてもまた適用されます。
+
+［☆］The following applescript commands have been added to TeXShop so editors can call TeXShop directly:
+
+【★】エディタから直接 TeXShop を呼び出せるように、以下の AppleScript コマンドが追加されています：
+
+-typesetinteractive
+-texinteractive
+-latexinteractive
+-contextinteractive
+-bibtexinteractive
+-makeindexinteractive
+-metapostinteractive
+-taskdone
+-refreshpdf
+-open_for_externaleditor
+
+［☆］The first seven commands activate TeXShop typesetting commands. Applescript will return immediately after these calls without waiting for typesetting to complete. The "taskdone" call can be used to test completion; it returns NO while typesetting is being done, and YES when it is finished. Each of these calls refreshes the preview window at the end of typesetting. If your editor calls TeXShop to typeset, the "Automatic Preview Update" preference can be turned off.
+
+【★】最初の７つのコマンドは TeXShop のタイプセッティング・コマンドを作動させます。これらのコールの後で AppleScript は、タイプセットの完了を待たずにすぐリターンします。 「taskdone」コールは完了したかどうかを調べるのに使えます ； これはタイプセットが行なわれている間は NO を返し、終了すると YES を返すのです。これらのコールはそれぞれに、タイプセット完了時にはプレビューウインドウを更新します。使用するエディタが TeXShop を呼び出してタイプセットするのであれば、環境設定の「プレビューの自動更新」はオフにしておけます。
+
+［☆］If the external editor modifies the pdf output directly, it can call "refreshpdf" to refresh the pdf display. This is only needed if "Automatic Preview Update" is off. Finally "open_for_externaleditor" opens a tex file by calling "Open for Preview".
+
+【★】もし外部エディタが pdf 出力をじかに修正するのであれば、 「refreshpdf」を呼び出して pdf 画面を更新することができます。これは「プレビューの自動更新」がオフになっている場合にのみ必要となります。最後の「open_for_externaleditor」は「プレビューを開く...」を呼び出して texファイルを開きます。
+
+［☆］The Tcl code to make these calls from AlphaX in included in the AlphaTcl folder inside the TeXShop_Folder of the TeXShop distribution. Read the first lines of this file to see how to configure AlphaX for this purpose.
+
+【★】AlphaX からこれらのコールを行なうための Tcl コードは、 TeXShop ディストリビューションの TeXShop_Folder の中にある AlphaTcl フォルダ内に入っています。ファイルの初めに書かれていることを読み、意図に沿って AlphaX を設定する方法を確認してください。
+
+**Copy-Paste and Drag-Drop from the Preview Window（プレビューウインドウからのコピー＆ペーストおよびドラッグ＆ドロップ）
+
+［☆］It is possible to select a portion of the pdf preview display and copy and paste the resulting graphic into another program. Drag and drop of the selection is also supported. Preference items allow users to select the file type of the copy (pdf, png, jpg, tiff, etc.) and the foreground and background colors and transparency.
+
+【★】pdf のプレビュー表示の一部分を選択してコピーし、他のプログラムに画像としてペーストすることができます。選択部分のドラッグ＆ドロップもサポートしています。環境設定項目では、コピーファイルのフォーマット（ pdf ・ png ・ jpg ・ tiff 等々）や、文字色、背景色と透明度を選べます。
+
+［☆］Preview selection combined with drag and drop can be used with Keynote. Using the default copy preferences, a text selection can be dropped on a Keynote slide; the background of the text will be transparent, so the slide background will show between the letters. This text can be resized since the default copy format is pdf.
+
+【★】プレビューの選択部分はドラッグ＆ドロップで Keynote と組み合わせて利用することができます。デフォルトのコピー設定を使い、テキストの選択部分を Keynote のスライドにドロップできます ； テキストの背景は透明になるので、文字の間にはスライドの背景が見えます。このテキストはデフォルトのコピーフォーマットが pdf なのでリサイズできます。
+
+［☆］The Edit menu's "Select All" command can be used to select the entire pdf page for copying. However, in Multi-Page and Double-Multi-Page modes Select All only works if the document has 20 or fewer pages, since otherwise the selected pdf could be enormous and copying could bring the machine to a crawl.
+
+【★】コピーを取るのに、編集メニューの「全てを選択」コマンドを使うと pdf ページ全体を選択できます。ですが「複数ページ」や「複数見開きページ」モードでは、 「全てを選択」は文書が20ページ以下の場合にのみ機能します──そうしておかないと、選択した pdf が巨大になりかねず、コピー作業がマシンの速度を低下させてしまうので。
+
+**Setting a Project Root File（プロジェクトのルートファイルを設定する）
+
+［☆］It is common to split large input files into several smaller files controlled by a root file. For instance, the root file of a book project might have the form
+
+【★】大きな入力ファイルを小さくいくつかに分割して、ルートファイルで管理するのは、よく行なわれることです。たとえば、書籍のプロジェクトのルートファイルは次のような形になっているかもしれません──
+
+	\documentclass[11pt]{book}
+	\includeonly{Chapter2/two}
+	\textwidth = 6.5 in
+	\textheight = 9 in
+	\begin{document}
+	\include{Chapter1/one}
+	\include{Chapter2/two}
+	\include{Chapter3/three}
+	\end{document}
+
+［☆］This root file contains formatting commands for the entire project, but the subject matter is contained in files one.tex, two.tex, and three.tex. The second line above tells TeX to typeset chapter two only, speeding up typesetting while chapter two is being written. When the book is complete, this line can be commented out and the entire book can be typeset a final time.
+
+【★】このルートファイルにはプロジェクト全体に対するフォーマット・コマンドはありますが、その内容については one.tex ・ two.tex ・ three.tex という３つのファイルに収められています。上記の第２行目は、第２章だけをタイプセットするよう TeX に指示しています──第２章の執筆中にタイプセットにかかる時間を短縮するためです。本が完成した暁には、この行はコメントアウトして、本全体を最終的にタイプセットすることができます。
+
+［☆］While chapter two is being written, it would be natural to open the file two.tex in TeXShop. But after changes are made to this input file, TeXShop should not typeset two.tex; instead it should typeset the root file. TeXShop can be told to do so in two ways. The first is to indicate the root file in one of the first twenty lines of each chapter file by writing
+
+【★】第２章を書いているときに、ファイル two.tex を TeXShop で開くというのはごく自然なことでしょう。けれどもこの入力ファイルに変更を施した後、 two.tex をタイプセットすべきではありません ； 代わりにルートファイルをタイプセットします。そうするよう TeXShop に指示できる方法が２つあります。 １つ目は、各章ごとのファイルの冒頭20行以内の１行に次のように書くことで、ルートファイルを指定します──
+
+	%!TEX root = ../Main.tex
+
+［☆］The second is to use the menu command "Set Project Root..." This menu command presents a panel with a text box where the name of the root file can be entered.
+
+【★】２つ目は「プロジェクトルートの設定...」というメニューコマンドを使う方法です。このメニューコマンドが提示するパネルにはテキストボックスがありますから、そこにルートファイルの名前を入れます。
+
+［☆］If the root file is in the same folder as the input file, it is enough to give its name, including the ".tex" extension. For instance, if the root file is named Main, you can enter Main.tex in the first source line or the dialog window.
+
+【★】ルートファイルが入力ファイルと同じフォルダ内にあるときは、ファイル名だけで十分です──拡張子「.tex」を含めた名前です。たとえば、ルートファイルの名前が Main なら、ソースの第１行目またはダイアログウインドウには Main.tex と書き入れます。
+
+［☆］If the root file is in a different directory, its name can be given relative to the location of the input file. In the above example, the various chapters are contained in subfolders within the folder containing the root file. In that case, you could enter ../Main.tex in the first source line or dialog window, showing the location of the root file relative to the chapter input file.
+
+【★】もしルートファイルが異なるディレクトリにあるなら、入力ファイルの位置に対する相対パス名を付けることもできます。上記の例では、個々の章はルートファイルのあるフォルダ内のサブフォルダの中に入っています。このような場合、ソースの第１行目またはダイアログウインドウに ../Main.tex と入力すれば、章ごとの入力ファイルに対する相対パスでルートファイルの場所を示すことができます。
+
+［☆］Finally, the name of the root can be given with an absolute name, as in /Users/me/Main.tex.
+
+【★】最後に、ルートの名前は、絶対パス名でも指定できます── /Users/me/Main.tex のように。
+
+［☆］If the entire TeX source is contained in a single file, it is not necessary to set the root project name.
+
+【★】TeX ソース全体が単一のファイルになっている場合には、プロジェクトルートを設定する必要はありません。
+
+［☆］If the "Set Project Root.." command is used to indicate a root file, TeXShop remembers the name of the root file by writing the information to a file with the same name as the input file and the extension ".texshop". For instance, if the input for chapter two is in two.tex, TeXShop writes the name of the root in two.texshop in the same directory as two.tex. If the file two.texshop is later thrown away, TeXShop will revert to typesetting two.tex rather than Main.tex. No extra ".texshop" file is required if the root file is specified in the first line of the source file.
+
+【★】「プロジェクトルートの設定...」コマンドを使ってルートファイルを指定すると、 TeXShop は、入力ファイルと名前が同じで拡張子が「.texshop」となっているファイルに情報を書き込むことで、ルートファイル名を記憶します。たとえば、第２章の入力ファイルが two.tex の場合、 TeXShop は、 two.tex と同じディレクトリにある two.texshop にルートファイル名を書き込みます。後で two.texshop を捨ててしまうと、 TeXShop は Main.tex ではなく two.tex をタイプセットするようになってしまいます。ソースファイルの第１行目でルートファイルを特定すれば、余分な「.texshop」ファイルは不要になります。
+
+［☆］If a root file is active, typing command-1 when a given source window is at the front will activate the corresponding preview window. Typing command-1 again will activate the source window. Since a preview window may correspond to several source windows, command-1 will activate the source window which previously activated the preview window, or the root source if no previous command-1 was entered.
+
+【★】ルートファイルが有効なら、所定のソースウインドウが前面に出ている状態で command＋1 を押すと、対応するプレビューウインドウがアクティブになります。もう一度 command＋1 を押せば、ソースウインドウがアクティブになります。プレビューウインドウは複数のソースウインドウに対応しているかもしれないので、 command＋1 でアクティブになるのは、直前にプレビューウインドウをアクティブにしたソースウインドウです──それまでに一度も command＋1 が押されていなかった場合は、ルートソースをアクティブにします。
+
+**Pdfsync（ Pdfsync ）
+
+［☆］Synchronization is an important feature of Textures, a commercial implementation of TeX for Mac Classic by Blue Sky TeX Systems. Using this feature, an author can click in the preview window and immediately be taken to the corresponding spot in the source window, or click in the source window and be taken to the preview window. A native version of Textures for MacOS X is promised but has not yet been released. The implementation of synchronization in Textures is widely admired for its ability to precisely locate the corresponding spot in the source code.
+
+【★】シンクロナイゼーションは Textures の重要な機能です── Textures は Classic Mac 用の商用 TeX ソフトで Blue Sky TeX Systems 社の製品です。この機能があれば、執筆者はプレビューウインドウをクリックすることで、ソースウインドウ内の該当部分にすぐに移動でき、またソースウインドウをクリックしてプレビューウインドウへ移動できます。 Mac OS X 用ネイティブ・バージョンの Textures が約束されてはいますが、今はまだリリースされていません。 Textures におけるシンクロナイゼーションの実装は、ソースコード内の対応する箇所を正確に突き止めるその能力によって広く賞賛されています。
+
+［☆］Since this implementation, a number of TeX systems have provided a roughly similar feature using an additional style file which causes TeX to write extra information to the dvi file. None of these approximations (including the TeXShop methods to be described next) is as accurate as the Textures method.
+
+【★】この実装より後、多くの TeX システムでも似たような機能が提供されていますが、これは TeX が dvi ファイルに補足情報を書き込むようにする追加のスタイルファイルを使っています。これらの似た方式のどれひとつとして（次に述べる TeXShop の方式も含めて）Textures のものほど精確ではありません。
+
+［☆］TeXShop can provide synchronization in two ways. The default method uses a new ability in Mac OS X 10.4 to search for strings in pdf files. No special style files need be included to use this method. Click on a word or phrase in the source window while holding down the Apple control key; the preview window will scroll to the appropriate spot and the corresponding typeset phrase will be circled in red. Similarly, click on a word or phrase in the preview window. The appropriate source file will open (if necessary) and scroll to the corresponding source phrase, which will be highlighted in yellow.
+
+【★】TeXShop において、シンクロナイゼーションを行なうには２種類の方法があります。デフォルトの方法は、Mac OS X 10.4 の新機能である PDF ファイル内の文字列検索機能を利用します。この方法を利用するために特別なスタイルファイルを読み込む必要はありません。ソースウインドウ内の単語や語句を、コマンドキーを押しながらクリックしてみてください──プレビューウインドウが適切な位置までスクロールしてゆき、組版された当該文字列を赤で囲って表示します。同様に、プレビューウインドウ内で単語や語句を⌘＋クリックしてみてください。該当するソースファイルが（必要であれば）開かれ、対応する文字列の位置までスクロールし、黄色でハイライト表示します。
+
+［☆］This method is independent of the engine used to typeset the file, so it will work with pdftex and pdflatex, with TeX + Ghostscript and LaTeX + Ghostscript, with XeTeX, and with other engines.
+
+【★】この方法はファイルをタイプセットするプログラムに依存しませんので、pdftex/pdflatex、TeX/LaTeX + Ghostscript、XeTeX や他のタイプセットプログラムでも利用できます。
+
+［☆］When using this facility, it helps to know the underlying mechanism. Suppose you click on a spot in the source file. TeXShop obtains the string 20 characters wide centered about the click, and searches for the corresponding string in the pdf file. If it finds this string exactly once, it circles the pdf string in red and declares success. But often, source strings contain formatting commands and do not match output strings; this is certainly true when typesetting mathematics. So if the search fails, TeXShop backs up 5 characters, obtains a new string 20 characters wide, and tries again. It repeats this operation 20 times if necessary, and if none of the tries succeeds it repeats the operation 20 more times looking forward past the original string rather than backward. If none of these search operations succeeds, TeXShop gives up.
+
+【★】この機能を利用する上で、基本的な仕組みを知っておくと役に立ちます。
+ソースファイルのある箇所をクリックするとしましょう。
+TeXShop はクリックの位置を中心にして20字分の文字列を取得し、pdf ファイル内の対応する文字列を検索します。
+もしこの文字列が正確に１回だけ見つかるようであれば、pdf 内の文字列を赤で丸く囲むことでうまくいったことを示します。
+しかしよくあることですが、ソースの文字列には組版用のコマンドが含まれており、出力結果の文字列とは一致しません──これは数学の組版ではまずもってその通りです。
+なので検索がうまくゆかないようであれば、TeXShop は５文字分のバックアップを取り、新しく20字分の文字列を取得し、再試行します。
+この動作を必要に応じて20回くり返しますが、一度としてうまくゆかないようであれば、さらにまた20回、今度は逆に元々の文字列よりも前に遡って、この動作をくり返します。
+こうした検索がまるっきり功を奏さないようだと、TeXShop はお手上げです。
+
+［☆］Obviously, then, it is best to click on sentences rather than formulas. Paragraphs with heavy markup may not synchronize well. Experiments show, however, that searches usually succeed and clicking can be done without really thinking about selecting an appropriate spot.
+
+【★】ということは、明らかに、数式よりも文章をクリックする方がよいわけです。
+コテコテにマークアップしてある段落は、うまくシンクロナイズできないかもしれません。
+とはいえ、いろいろ試してみたところでは、検索はたいていうまくゆきますし、クリックするのにふさわしい位置を選ぼうとしてあまり考え込んだりしなくても大丈夫です。
+
+［☆］Synchronizing from the preview window to the source window works the same way, but there is an additional complication. Projects may contain several source files, inserted using the \include or \input methods. TeXShop handles this complication by assuming that all \include and \input statements occur in the root file, using one of the commands \include{this file}, \input{this file}, or \import{this file}. In the initial implementation, it makes a list of the first sixty such files and searches all of them, declaring success if a string occurs exactly once in exactly one of the files. If the string is found in a file which is not yet open, TeXShop opens the file. Then it scrolls to the appropriate spot and highlights the resulting phrase in yellow. (In future implementations, the number sixty may be raised; write if you need more files searched.)
+
+【★】プレビューウインドウからソースウインドウへのシンクロナイゼーションも同じようにして機能しますが、もうちょっと複雑です。
+プロジェクトには、\include や \input といった方法で挿入された、いくつものソールファイルが含まれているかもしれません。
+TeXShop では、\include や \input などの命令文はすべてルートファイルに書き込まれていて、\include{this file}、\input{this file} ないしは \import{this file} のうちの１つを用いているものと想定することで、この複雑な状態を処理しています。
+最初の実装においては、先頭から60個のそうしたファイルをリスト化し、それらすべてに対して検索をかけ、ファイルのうち１つのみにおいて文字列が正確に１回だけ現われるのであれば、うまくいったことを表示します。
+当該の文字列がまだ開かれていないファイルの中で見つかれば、TeXShop がそのファイルを開きます。
+そして適切な位置までスクロールし、その語句を黄色でハイライト表示します。
+（将来的な実装において、60という数は引き上げられるかもしれません──もっとたくさんのファイルへの検索が必要であれば、そう書き送ってください。）
+
+［☆］ConTeXt uses a different method of inputting files, so a search for \include and \input statements will not find related ConTeXt files. There is a manual method to indicate files to be searched for synchronization; this method works with any typesetting method and is required in ConTeXt. At the top of the root file, list files to be searched via
+
+【★】ConTeXt では、ファイルを挿入するのに異なる方法を用いるので、\include や \input といった記述に対して検索をかけても関連する ConTeXt のファイルを見つけることはできません。
+そこでシンクロナイゼーション用に検索するファイルを手動で指示する方法があります──この方法はどのタイプセット方式でも機能しますが、ConTeXt では必須です。
+ルートファイルの冒頭において、検索するファイルを次のような書式で記載します──
+
+	%!TEX projectfile =
+
+［☆］Here are examples:
+
+【★】以下に例を挙げます──
+
+	%!TEX projectfile = /Users/koch/MyDoc/chapter1.tex
+	%!TEX projectfile = chapter2.tex
+	%!TEX projectfile = ../chapter3.tex
+
+［☆］Previous versions of TeXShop used an alternate synchronization method, invented in 2003 by Jérôme Laurens and Piero D'Ancona. They wrote a style file for pdflatex; their package, pdfsync.sty, causes pdftex to write an extra file during typesetting with information needed to correlate the output pdf and input source files. Laurens' and D'Ancona's work depends on internal pdftex commands which output the x and y coordinates of certain typesetting operations, so it only works with pdftex, pdflatex, and context.
+
+【★】以前のバージョンの TeXShop では、別方式のシンクロナイゼーションを用いていました──これは2003年に Jérôme Laurens さんと Piero D'Ancona さんによって考案されたものです。
+二人は pdflatex 用にスタイルファイルを書きました──彼らのパッケージ（pdfsync.sty）は、出力結果の PDF とソースファイルとを相互に関連づけるのに必要な情報を、タイプセット中に pdftex が特別なファイルに書き出すようにするものです。
+Laurens さんと D'Ancona さんの取り組みは、特定のタイプセット操作でX座標とY座標を出力する pdftex の内部コマンドに依存しており、pdftex ないしは pdflatex、あるいは ConTeXt においてのみ動作します。
+
+［☆］TeXShop can still use this method. A preference is available in the Misc tab to select the synchronization method; "pdfsync" is the original method and "pdfsearch" is the new method. It is also possible to choose to use "pdfsearch" but fall back on "pdfsync" when "pdfsearch" fails to find a match.
+
+【★】TeXShop では今でもまだこの方法を利用できます。
+「環境設定...」の「詳細」タブで、シンクロナイゼーション方式（Sync 方式）を選択できます──「pdfsync.sty」が元々の方法で、新しい方法は「PDFを検索」です。
+「PDFを検索」を選択しつつも、それが失敗したときには「pdfsync.sty」に頼る、というのも可能です。
+
+［☆］The "pdfsync" method requires that you install the latest version of pdfsync.sty and related files. Read "How do I configure TeXShop?: Did You Install TeXShop Correctly" to make certain that you installed these files.
+
+【★】「pdfsync.sty」方式を利用するには、pdfsync.sty の最新バージョンと関連ファイルをインストールする必要があります。
+これらのファイルをインストールしたか確認するには、ヘルプの「TeXShop の設定はどうすればよいか？」の中にある「きちんとインストールしましたか？」をお読みください。
+
+［☆］To use pdfsync with LaTeX, add the following line to the preamble of your tex source code before the \begin{document} line:
+
+【★】LaTeX で pdfsync を使うには、次の１行を TeX ソースコードのプリアンブル── \begin{document} 行よりも前の部分──に付け加えます：
+
+	\usepackage{pdfsync}
+
+［☆］The package will be ignored if you typeset with tex + ghostscript, but if you typeset with pdflatex, an extra file will be created with extension .pdfsync. For example, if the source file is named main.tex, the extra file will be named main.pdfsync. This extra file contains the information needed to correlate spots in the pdf file with spots in the source file. Most files should typeset without errors using pdfsync, but in a small number of cases, this package might introduce extra errors. Such dangerous code can be enclosed between a pair of commands \pdfsyncstop and \pdfsyncstart. For added accuracy, extra synchronization points can be added using the command \pdfsync. The pdfsync style files sometimes changes line breaks in a document, so the standard recommendation is to typeset using it and then typeset a final time without it.
+
+【★】このパッケージは「TeX＋Ghostscript」でタイプセットした場合は無視されますが、 pdflatex でタイプセットを行なうと、.pdfsync という拡張子を持つ追加ファイルを生成します。たとえば、ソースファイルの名前が main.tex だとすると、追加ファイルの名前は main.pdfsync となります。この追加されたファイルには、 pdf における位置とソースファイルにおける位置とを関連づけるのに必要な情報が書き込まれています。 pdfsync を用いたにしても、ほとんどのファイルではエラーなしでタイプセットされるはずですが、ごく少数のケースでは、このパッケージが余計なエラーをもたらすかもしれません。そうした危ういコードは、ペアになっているコマンド── \pdfsyncstop と \pdfsyncstart との間に挟み込んでおけます。さらに精度を高めるために、コマンド \pdfsync を使って特別にシンクロ・スポットを増やすこともできます。pdfsync スタイルファイルは時おりドキュメント内の改行位置を変更してしまうことがあるので、pdfsync を使ってタイプセットしていても、決定稿では使わずにタイプセットすることをひとまずはお勧めします。
+
+［☆］Once a file has been typeset with pdfsync, synchronization works exactly as with "pdfsearch" described above. Note that if you include pdfsync.sty but choose "pdfsearch" as the TeXShop synchronization preference, then the .pdfsync file will just be ignored.
+
+【★】ひとたび pdfsync を用いてファイルをタイプセットすれば、ちょうど上述の「PDFを検索」と同じようにシンクロナイゼーションが機能します。
+注意：もし pdfsync.sty を読み込んでいても、TeXShop のシンクロナイゼーションの設定が「PDFを検索」になっていれば、拡張子が「.pdfsync」のファイルはたんに無視されます。
+
+［☆］Warning: if a root document uses \include to add other source files but these files are not linked back to the root document with a "%!TEX root" line or a root file, then command-click will move from the preview window to an included source, but not from the included source back to the preview. It is easy to remedy this by adding a "%!TEX root" comment to the top of each source file.
+
+【★】警告：もしルートファイルが \include を使って他のソースファイルを追加してはいるものの、これらのソースファイルの方からルートファイルに対して「%!TEX root」という１行ないしはルートファイル設定により相互参照的にリンクされていない場合、コマンド＋クリックすることでプレビューウインドウからソースウインドウへは移動できますが、ソースからプレビューへは戻れません。
+これは、それぞれのソースファイルの冒頭に「%!TEX root」コメントを書き加えることで容易に是正できます。
+
+［☆］As explained above, pdfsync works with files read by \include{myfile}. It also works with the input command provided the syntax used is \input{myfile}; the alternate syntax \input myfile will not work.
+
+【★】上述したように、 pdfsync は \include{myfile} で読み込まれるファイルには機能します。\input{myfile} という構文が使われていれば input コマンドに対しても機能します ； ほかの構文「\input myfile」では機能しません。
+
+［☆］The file pdfsync.sty is used for LaTeX; similar files pdfsync.tex and pdfsync4context.tex exist for tex and context synchronization.
+
+【★】pdfsync.sty というファイルは、 LaTeX で利用されます ； 同様のファイル pdfsync.tex と pdfsync4context.tex はそれぞれ TeX と ConTeXt でのシンクロナイゼーション用となっています。
+
+［☆］Synchronization works by writing data to mysource.pdfsync corresponding to certain synchronization spots in the preview window. Roughly speaking, each data entry contains
+
+【★】シンクロナイゼーションは、 mysource.pdfsync にデータを書き込み、プレビューウインドウ内の特定のシンクロ・スポットに照応させることで機能しています。大まかに言えば、それぞれのデータ・エントリには以下のようなものが含まれます──
+
+--［☆］the page number of the preview document where the point occurs
+--【★】ポイントの置かれたプレビュー文書のページ番号
+
+--［☆］the location of the point on this page
+--【★】このページにおけるポイントの位置
+
+--［☆］the name of the source file producing this particular output
+--【★】この特定の出力を生成するソースファイルの名前
+
+--［☆］the line number in this source file for this particular output
+--【★】このソースファイル内の該当する行番号
+
+［☆］There is a way to get TeXShop to display these synchronization points. The preview window toolbar has a checkbox item called SyncMarks. By default, this item is not shown; use Customize Toolbar in the Window menu to select it. When the checkbox is checked, synchronization points are shown.
+
+【★】こうしたシンクロナイゼーション・ポイントを TeXShop で表示させる方法があります。プレビューウインドウのツールバーには「Sync」というチェックボックスがあります。デフォルトでは見えていません ； 「ウインドウ」メニューにある「ツールバーをカスタマイズ...」を使って選び取ってください。チェックボックスをチェックすると、シンクロナイゼーション・ポイントが見えるようになります。
+
+［☆］When the Preview window first appears, this item is not checked. A hidden preference item can change this:
+
+【★】プレビューウインドウが表示された当初は、この項目にはチェックが入っていません。隠れた環境設定項目でこれを変更できます：
+
+	defaults write TeXShop ShowSyncMarks YES
+
+
+----
+関連ページ　[[TeXShop]]
